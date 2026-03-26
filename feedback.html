@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feedback – OceanAct | SDG 14</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        /* Feedback page-specific styles */
+        .prog-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            margin-bottom: 1.2rem;
+            flex-wrap: wrap;
+        }
+
+        .prog-controls select {
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            font-size: 0.88rem;
+            cursor: pointer;
+        }
+
+        /* Scrollable programme section */
+        .prog-scroll {
+            max-height: 420px;
+            overflow-y: auto;
+            padding-right: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .prog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 1rem;
+        }
+
+        .prog-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.2rem;
+            box-shadow: var(--shadow);
+        }
+
+        .prog-card h4 {
+            color: var(--primary);
+            margin-bottom: 0.4rem;
+        }
+
+        .prog-card p {
+            font-size: 0.85rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .prog-card .prog-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Reviews */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1.2rem 0 2rem;
+        }
+
+        .review-card {
+            background: var(--white);
+            border-left: 4px solid var(--secondary);
+            border-radius: 0 10px 10px 0;
+            padding: 1rem 1.2rem;
+            box-shadow: var(--shadow);
+        }
+
+        .review-card h4 {
+            color: var(--dark);
+            font-size: 0.95rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .review-card p {
+            font-size: 0.85rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .review-meta {
+            font-size: 0.78rem;
+            color: var(--muted);
+        }
+
+        .review-rating {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        /* Feedback form */
+        .form-section {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.8rem;
+            margin-top: 2rem;
+        }
+
+        fieldset {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem 1.2rem;
+            margin-bottom: 1.2rem;
+        }
+
+        legend {
+            font-weight: 700;
+            color: var(--dark);
+            font-size: 0.95rem;
+            padding: 0 0.5rem;
+        }
+
+        .form-row {
+            margin-bottom: 0.9rem;
+        }
+
+        .form-row label {
+            display: block;
+            font-size: 0.88rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            color: var(--dark);
+        }
+
+        .form-row input,
+        .form-row textarea,
+        .form-row select {
+            width: 100%;
+            padding: 0.5rem 0.8rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-family: var(--font-body);
+            transition: border-color 0.2s;
+        }
+
+        .form-row input:focus,
+        .form-row textarea:focus,
+        .form-row select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .char-counter {
+            font-size: 0.78rem;
+            color: var(--muted);
+            text-align: right;
+            margin-top: 0.2rem;
+        }
+
+        .error-msg {
+            color: #c62828;
+            font-size: 0.82rem;
+            margin-top: 0.2rem;
+            display: none;
+        }
+
+        .error-msg.visible {
+            display: block;
+        }
+
+        .input-error {
+            border-color: #c62828 !important;
+        }
+
+        #confirm-msg {
+            display: none;
+            background: #e8f5e9;
+            border: 1px solid #a5d6a7;
+            border-radius: 8px;
+            padding: 1rem 1.2rem;
+            color: #2e7d32;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        .rating-overall {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--primary);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-inner">
+            <a href="home.html" class="logo" aria-label="OceanAct Home">
+                <span class="logo-icon" aria-hidden="true">🌊</span>
+                <span class="logo-text">OceanAct</span>
+            </a>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="ais.html">Impact Simulator</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="feedback.html" class="active">Feedback</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1 class="section-title">Programmes &amp; Feedback</h1>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">Explore SDG 14 initiatives and share your thoughts with us.</p>
+
+        <!-- Programme Directory -->
+        <section aria-labelledby="prog-heading">
+            <h2 id="prog-heading">Ocean Conservation Programmes</h2>
+
+            <div class="prog-controls">
+                <label for="sort-filter" style="font-weight:600;font-size:0.88rem;">Sort by:</label>
+                <select id="sort-filter">
+                    <option>Most Popular</option>
+                    <option>Student-Friendly</option>
+                    <option>Nearest</option>
+                    <option>Newest</option>
+                </select>
+            </div>
+
+            <div class="prog-scroll">
+                <div class="prog-grid">
+
+                    <article class="prog-card">
+                        <img src="beach.jpg" alt="Plastic bottle on a sandy beach with people cleaning"
+                            style="width: 100%; height: 160px; object-fit: cover; border-radius: 6px; margin-bottom: 1rem;" />
+                        <h3>Beach Clean-Up Network</h3>
+                        <p>Join local volunteer teams to remove plastic waste from beaches and coastal areas near you.
+                        </p>
+                        <a href="#" class="btn btn-primary" style="font-size:0.82rem;padding:0.4rem 1rem;">Get
+                            Involved</a>
+                    </article>
+
+                    <article class="prog-card">
+                        <img src="coral.jpg" alt="Coral restoration structures underwater"
+                            style="width: 100%; height: 160px; object-fit: cover; border-radius: 6px; margin-bottom: 1rem;" />
+                        <h3>Coral Reef Restoration</h3>
+                        <p>Support international coral gardening initiatives that are rebuilding bleached reef
+                            ecosystems.</p>
+                        <a href="#" class="btn btn-primary" style="font-size:0.82rem;padding:0.4rem 1rem;">Learn
+                            More</a>
+                    </article>
+
+                    <article class="prog-card">
+                        <img src="oceanedu.jpg" alt="Instructor teaching children at the beach"
+                            style="width: 100%; height: 160px; object-fit: cover; border-radius: 6px; margin-bottom: 1rem;" />
+                        <h3>Ocean Education Hub</h3>
+                        <p>Free online workshops and resources for students to learn about marine biology and
+                            conservation.</p>
+                        <a href="#" class="btn btn-primary" style="font-size:0.82rem;padding:0.4rem 1rem;">Join</a>
+                    </article>
+
+                    <article class="prog-card">
+                        <img src="fish.jpg" alt="Large school of fish swimming in the ocean"
+                            style="width: 100%; height: 160px; object-fit: cover; border-radius: 6px; margin-bottom: 1rem;" />
+                        <h3>Sustainable Fisheries Watch</h3>
+                        <p>Monitor and advocate for sustainable fishing practices in your region with this citizen
+                            science programme.</p>
+                        <a href="#" class="btn btn-primary"
+                            style="font-size:0.82rem;padding:0.4rem 1rem;">Participate</a>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Ratings Summary -->
+        <section aria-labelledby="reviews-heading">
+            <h2 id="reviews-heading">What Participants Say</h2>
+            <p>
+                <span class="rating-overall">8.7</span><strong>/10 Excellent</strong>
+                &nbsp;— based on 142 verified reviews
+            </p>
+
+            <div class="reviews-grid">
+                <article class="review-card">
+                    <h3>Amazing experience, highly recommended!</h3>
+                    <p>Joining the beach clean-up genuinely changed my perspective on waste. Would do it every weekend.
+                    </p>
+                    <a href="#" style="font-size:0.8rem;">See more</a>
+                    <p class="review-meta">Jamie L. · 12 Jan 2026 · <span class="review-rating">9/10</span></p>
+                </article>
+                <article class="review-card">
+                    <h3>Educational and impactful</h3>
+                    <p>The Ocean Education Hub workshops were clear, well-structured, and genuinely eye-opening for our
+                        class.</p>
+                    <a href="#" style="font-size:0.8rem;">See more</a>
+                    <p class="review-meta">Dr Aisha M. · 3 Feb 2026 · <span class="review-rating">8/10</span></p>
+                </article>
+                <article class="review-card">
+                    <h3>Great for student volunteers</h3>
+                    <p>Really student-friendly hours and a welcoming community. Met people just as passionate about
+                        oceans as I am.</p>
+                    <a href="#" style="font-size:0.8rem;">See more</a>
+                    <p class="review-meta">Marcus R. · 20 Feb 2026 · <span class="review-rating">9/10</span></p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Feedback Form -->
+        <section class="form-section" aria-labelledby="form-heading">
+            <h2 id="form-heading">Send Us Your Feedback</h2>
+            <p>Your comments help improve these programmes for everyone.</p>
+
+            <form id="feedbackForm" novalidate>
+
+                <fieldset>
+                    <legend>Personal Details</legend>
+
+                    <div class="form-row">
+                        <label for="full-name">Full Name *</label>
+                        <input type="text" id="full-name" placeholder="Your name" />
+                        <span class="error-msg" id="err-name">Please enter your full name.</span>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" placeholder="you@example.com" />
+                        <span class="error-msg" id="err-email">Please enter a valid email address.</span>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="tel">Telephone Number</label>
+                        <input type="tel" id="tel" placeholder="+44 7000 000000" />
+                    </div>
+
+                    <div class="form-row">
+                        <label for="address">Address</label>
+                        <textarea id="address" rows="2" placeholder="Your address (optional)"></textarea>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Feedback Details</legend>
+
+                    <div class="form-row">
+                        <label for="programme">Programme of interest</label>
+                        <select id="programme">
+                            <option value="">— Select a programme —</option>
+                            <option>Beach Clean-Up Network</option>
+                            <option>Coral Reef Restoration</option>
+                            <option>Ocean Education Hub</option>
+                            <option>Sustainable Fisheries Watch</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="visit-date">Visit / Participation Date</label>
+                        <input type="date" id="visit-date" />
+                    </div>
+
+                    <div class="form-row">
+                        <label for="preferred-time">Preferred Contact Time</label>
+                        <input type="datetime-local" id="preferred-time" />
+                    </div>
+
+                    <div class="form-row">
+                        <label for="message">Your Message * <span id="char-count" class="char-counter">0 / 300
+                                characters</span></label>
+                        <textarea id="message" rows="4" maxlength="300"
+                            placeholder="Share your experience or suggestions…"></textarea>
+                        <span class="error-msg" id="err-message">Please enter a message (at least 10 characters).</span>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="interests">Interests (type to search)</label>
+                        <input type="text" id="interests" list="interests-list" placeholder="e.g. Marine biology" />
+                        <datalist id="interests-list">
+                            <option value="Marine biology">
+                            <option value="Ocean clean-up">
+                            <option value="Coral restoration">
+                            <option value="Sustainable fishing">
+                            <option value="Climate advocacy">
+                        </datalist>
+                    </div>
+
+                </fieldset>
+
+                <button type="submit" class="btn btn-primary">Submit Feedback</button>
+            </form>
+
+            <div id="confirm-msg" role="alert">✅ Thank you for your feedback! We will get back to you soon.</div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="pageEditor_ST3.html">Page Editor (Student 3)</a>
+                <a href="validation_ST3.html">Validation</a>
+                <a href="https://www.w3.org/WAI/" target="_blank" rel="noopener">Accessibility</a>
+            </div>
+            <p class="footer-copy">Student 2 · OceanAct · SDG 14 · University of Westminster · 2025/26</p>
+        </div>
+    </footer>
+
+    <script>
+        /* =====================================================
+           Feedback Form JavaScript
+           1. Live character counter for message textarea
+           2. JS validation with custom error messages
+           3. Submission confirmation
+           ===================================================== */
+
+        const msgArea = document.getElementById('message');
+        const charCount = document.getElementById('char-count');
+
+        /* 1. Live character counter */
+        msgArea.addEventListener('input', function () {
+            const len = this.value.length;
+            charCount.textContent = len + ' / 300 characters';
+            charCount.style.color = len > 260 ? '#c62828' : 'var(--muted)';
+        });
+
+        /* Helper: show/hide error */
+        function setError(fieldId, errId, show) {
+            const field = document.getElementById(fieldId);
+            const err = document.getElementById(errId);
+            if (show) {
+                field.classList.add('input-error');
+                err.classList.add('visible');
+            } else {
+                field.classList.remove('input-error');
+                err.classList.remove('visible');
+            }
+            return show;
+        }
+
+        /* 2. Form validation on submit */
+        document.getElementById('feedbackForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            let hasError = false;
+
+            const name = document.getElementById('full-name').value.trim();
+            if (!name) { hasError = setError('full-name', 'err-name', true) || true; }
+            else { setError('full-name', 'err-name', false); }
+
+            const email = document.getElementById('email').value.trim();
+            const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+            if (!emailOk) { hasError = setError('email', 'err-email', true) || true; }
+            else { setError('email', 'err-email', false); }
+
+            const msg = msgArea.value.trim();
+            if (msg.length < 10) { hasError = setError('message', 'err-message', true) || true; }
+            else { setError('message', 'err-message', false); }
+
+            /* 3. Show confirmation if no errors */
+            if (!hasError) {
+                this.style.display = 'none';
+                document.getElementById('confirm-msg').style.display = 'block';
+            }
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sustainable Fishing – OceanAct | SDG 14</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .content-layout {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    @media (max-width: 720px) {
+      .content-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .side-nav {
+        display: none;
+      }
+    }
+
+    .side-nav {
+      position: sticky;
+      top: 80px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.2rem;
+    }
+
+    .side-nav h4 {
+      color: var(--primary);
+      margin-bottom: 0.8rem;
+    }
+
+    .side-nav ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .side-nav ul li a {
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: block;
+      padding: 0.25rem 0 0.25rem 0.5rem;
+      border-left: 3px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .side-nav ul li a:hover {
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+
+    .content-article section {
+      margin-bottom: 2.5rem;
+    }
+
+    .content-article h2 {
+      color: var(--primary);
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .content-img {
+      width: 100%;
+      max-height: 280px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin: 1rem 0;
+      border: 2px solid var(--border);
+    }
+
+    .go-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--primary);
+      color: var(--white);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 44px;
+      font-size: 1.2rem;
+      text-decoration: none;
+      z-index: 500;
+    }
+
+    .go-top:hover {
+      background: var(--dark);
+      color: var(--white);
+    }
+
+    #page-top {
+      display: block;
+      position: relative;
+      top: -80px;
+    }
+  </style>
+</head>
+
+<body>
+  <span id="page-top"></span>
+  <header>
+    <div class="header-inner">
+      <a href="home.html" class="logo" aria-label="OceanAct Home"><span class="logo-icon"
+          aria-hidden="true">🌊</span><span class="logo-text">OceanAct</span></a>
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="ais.html">Impact Simulator</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="sitemap.html">Sitemap</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <h1>Sustainable Fishing</h1>
+    <p style="color:var(--muted);margin-bottom:1.5rem;">Feeding the world without destroying the ocean — Student 3's
+      additional content page.</p>
+    <div class="content-layout">
+      <aside class="side-nav" aria-label="Page sections">
+        <h2>Contents</h2>
+        <ul>
+          <li><a href="#intro">Introduction</a></li>
+          <li><a href="#overfishing">Overfishing</a></li>
+          <li><a href="#methods">Sustainable Methods</a></li>
+          <li><a href="#choices">Consumer Choices</a></li>
+          <li><a href="#resources">Resources</a></li>
+        </ul>
+      </aside>
+      <article class="content-article">
+        <section id="intro">
+          <h2>Why Sustainable Fishing Matters</h2>
+          <p>Fishing supports more than 3.3 billion people in the world and livelihood to approximately 600 million
+            people,
+            primarily in the developing world. This has to be done without depleting the same stocks that have to be
+            replenished.
+            communities depend upon. Goal 14.4 More precisely, it requires the goal of ending overfishing and the use
+            of.
+            science-based management plans by 2020 - a deadline which the world has missed largely.</p>
+          <img class="content-img" src="https://images.unsplash.com/photo-1560275619-4662e36fa65c?w=700&q=80"
+            alt="Traditional fishing boats on calm ocean water representing small-scale sustainable fishing" />
+        </section>
+        <section id="overfishing">
+          <h2>The Overfishing Crisis</h2>
+          <p>The FAO has estimated that 34.2 percent of the global monitored stocks of fish are overfished or in other
+            words, they are being overfished.
+            grown more rapidly than they multiply. The rest 60 percent are fished to their maximum sustainable capacity.
+            Only
+            underfished stocks about 6% of stocks. This virtually has no safety margin against error, climatic shocks,
+            or ecological.
+            change.</p>
+          <img class="content-img" src="https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=700&q=80"
+            alt="Empty fishing nets representing depleted fish stocks from overfishing" />
+          <p>It is mainly caused by industrial fishing fleets that are usually subsidised by the governments. Many
+            operate in the
+            waters of developing countries under access schemes that bring very little benefit to the local communities
+            as well as
+            catching gigantic numbers of fish.</p>
+        </section>
+        <section id="methods">
+          <h2>Sustainable Fishing Methods</h2>
+          <ul style="list-style:disc;padding-left:1.5rem;color:var(--muted);">
+            <li style="margin-bottom:0.5rem;"><strong style="color:var(--dark);">Pole and line fishing</strong> —
+              Targets individual fish, eliminating bycatch and habitat damage.</li>
+            <li style="margin-bottom:0.5rem;"><strong style="color:var(--dark);">Fish aggregating device (FAD)-free
+                tuna</strong> — Avoids the indiscriminate catch of juvenile fish and non-target species.</li>
+            <li style="margin-bottom:0.5rem;"><strong style="color:var(--dark);">Aquaculture (well-managed)</strong> —
+              When properly regulated, farmed shellfish and seaweed can actually improve water quality.</li>
+            <li style="margin-bottom:0.5rem;"><strong style="color:var(--dark);">Seasonal closures</strong> — Allowing
+              fish populations to recover by prohibiting fishing during breeding seasons.</li>
+          </ul>
+        </section>
+        <section id="choices">
+          <h2>Making Better Consumer Choices</h2>
+          <p>Each seafood purchase will be in favor or against a sustainable ocean. Find the MSC (Marine Stewardship.
+            The label on packaging of Council) blue fish or the label on packaging of the Aquaculture Stewardship
+            Council. Apps like the Good
+            Fish Guide (a UK-based program by the Marine Conservation Society) assists shoppers with making a
+            responsible choice.
+          </p>
+          <img class="content-img" src="https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=700&q=80"
+            alt="Supermarket seafood section with sustainability labels visible on packaging" />
+          <p>Introducing the question to restaurants and fish and chip shops on where the seafood was obtained also
+            sends a strong market.
+            signal — and more businesses are getting responsive to consumer demand, transparency.</p>
+        </section>
+        <section id="resources">
+          <h2>Resources</h2>
+          <ul style="list-style:disc;padding-left:1.5rem;color:var(--muted);">
+            <li><a href="https://www.msc.org" target="_blank" rel="noopener">MSC — Marine Stewardship Council</a></li>
+            <li><a href="https://www.mcsuk.org/goodfishguide/" target="_blank" rel="noopener">MCS Good Fish Guide</a>
+            </li>
+            <li><a href="https://www.fao.org/fishery/en" target="_blank" rel="noopener">FAO Fisheries and
+                Aquaculture</a></li>
+          </ul>
+        </section>
+      </article>
+    </div>
+  </main>
+  <a href="#page-top" class="go-top" aria-label="Go to top of page">↑</a>
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="pageEditor_ST3.html">Page Editor (Student 3)</a>
+        <a href="validation_ST3.html">Validation</a>
+        <a href="https://www.w3.org/WAI/" target="_blank" rel="noopener">Accessibility</a>
+      </div>
+      <p class="footer-copy">Student 3 · OceanAct · SDG 14 · University of Westminster · 2025/26</p>
+    </div>
+  </footer>
+</body>
+
+</html>

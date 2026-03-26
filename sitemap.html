@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sitemap – OceanAct | SDG 14</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Sitemap page styles */
+    .sitemap-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      overflow-x: auto;
+    }
+
+    /* SVG nodes hover effect */
+    .sm-node rect,
+    .sm-node circle {
+      transition: fill 0.25s, stroke 0.25s;
+    }
+
+    .sm-node:hover rect,
+    .sm-node:focus rect {
+      fill: #00b4d8;
+      stroke: #03045e;
+    }
+
+    .sm-node:hover circle,
+    .sm-node:focus circle {
+      fill: #00b4d8;
+    }
+
+    .sm-node:focus {
+      outline: 2px dashed var(--secondary);
+      outline-offset: 3px;
+    }
+
+    /* SVG text */
+    .sm-node text {
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="home.html" class="logo" aria-label="OceanAct Home">
+        <span class="logo-icon" aria-hidden="true">🌊</span>
+        <span class="logo-text">OceanAct</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="ais.html">Impact Simulator</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="sitemap.html" class="active">Sitemap</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1 class="section-title">Site Map</h1>
+    <div class="section-divider"></div>
+    <p class="section-subtitle">Click any page node to navigate directly to that page.</p>
+
+    <div class="sitemap-wrap">
+      <!--
+      SVG Sitemap — created using SVG (not bitmap/screenshot).
+      viewBox makes it responsive; width/height set to 100%.
+      Each node is a <a> with tabindex for keyboard access.
+    -->
+      <svg viewBox="0 0 860 560" width="100%" role="img" aria-label="OceanAct website structure sitemap"
+        xmlns="http://www.w3.org/2000/svg" font-family="Open Sans, sans-serif">
+
+        <!-- ===== Connector lines ===== -->
+        <!-- Splash to Home -->
+        <line x1="430" y1="70" x2="430" y2="120" stroke="#90e0ef" stroke-width="2" />
+        <!-- Home to children (fan out) -->
+        <line x1="430" y1="170" x2="100" y2="250" stroke="#90e0ef" stroke-width="1.5" />
+        <line x1="430" y1="170" x2="220" y2="250" stroke="#90e0ef" stroke-width="1.5" />
+        <line x1="430" y1="170" x2="340" y2="250" stroke="#90e0ef" stroke-width="1.5" />
+        <line x1="430" y1="170" x2="460" y2="250" stroke="#90e0ef" stroke-width="1.5" />
+        <line x1="430" y1="170" x2="580" y2="250" stroke="#90e0ef" stroke-width="1.5" />
+        <line x1="430" y1="170" x2="700" y2="250" stroke="#90e0ef" stroke-width="1.5" />
+
+
+        <!-- Content pages branch from Home (ST1-ST4) -->
+        <line x1="430" y1="170" x2="430" y2="360" stroke="#caf0f8" stroke-width="1.5" stroke-dasharray="5,3" />
+        <line x1="430" y1="390" x2="200" y2="450" stroke="#caf0f8" stroke-width="1.5" />
+        <line x1="430" y1="390" x2="340" y2="450" stroke="#caf0f8" stroke-width="1.5" />
+        <line x1="430" y1="390" x2="480" y2="450" stroke="#caf0f8" stroke-width="1.5" />
+        <line x1="430" y1="390" x2="630" y2="450" stroke="#caf0f8" stroke-width="1.5" />
+
+        <!-- ===== ROOT: Splash ===== -->
+        <a href="splash.html" class="sm-node" tabindex="0" aria-label="Splash Screen page">
+          <title>Splash Screen</title>
+          <rect x="340" y="20" width="180" height="50" rx="8" fill="#03045e" stroke="#00b4d8" stroke-width="2" />
+          <text x="430" y="49" text-anchor="middle" fill="#caf0f8" font-size="14" font-weight="700">Splash
+            Screen</text>
+        </a>
+
+        <!-- ===== Home ===== -->
+        <a href="home.html" class="sm-node" tabindex="0" aria-label="Home page">
+          <title>Home Page</title>
+          <rect x="340" y="120" width="180" height="50" rx="8" fill="#0077b6" stroke="#00b4d8" stroke-width="2" />
+          <text x="430" y="149" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="700">Home</text>
+        </a>
+
+        <!-- ===== Level 2 pages ===== -->
+        <!-- Impact Simulator -->
+        <a href="ais.html" class="sm-node" tabindex="0" aria-label="Action Impact Simulator">
+          <title>Action Impact Simulator</title>
+          <rect x="40" y="248" width="120" height="44" rx="8" fill="#0096c7" stroke="#00b4d8" stroke-width="1.5" />
+          <text x="100" y="267" text-anchor="middle" fill="#fff" font-size="11">Impact</text>
+          <text x="100" y="281" text-anchor="middle" fill="#fff" font-size="11">Simulator</text>
+        </a>
+
+        <!-- Gallery -->
+        <a href="gallery.html" class="sm-node" tabindex="0" aria-label="Gallery">
+          <title>Gallery</title>
+          <rect x="160" y="248" width="120" height="44" rx="8" fill="#0096c7" stroke="#00b4d8" stroke-width="1.5" />
+          <text x="220" y="267" text-anchor="middle" fill="#fff" font-size="11">Gallery</text>
+        </a>
+
+        <!-- Profile -->
+        <a href="profile.html" class="sm-node" tabindex="0" aria-label="User Profile">
+          <title>User Profile</title>
+          <rect x="284" y="248" width="110" height="44" rx="8" fill="#0096c7" stroke="#00b4d8" stroke-width="1.5" />
+          <text x="339" y="267" text-anchor="middle" fill="#fff" font-size="11">User</text>
+          <text x="339" y="281" text-anchor="middle" fill="#fff" font-size="11">Profile</text>
+        </a>
+
+        <!-- Feedback -->
+        <a href="feedback.html" class="sm-node" tabindex="0" aria-label="Feedback and Programs">
+          <title>Feedback &amp; Programs</title>
+          <rect x="404" y="248" width="112" height="44" rx="8" fill="#0096c7" stroke="#00b4d8" stroke-width="1.5" />
+          <text x="460" y="267" text-anchor="middle" fill="#fff" font-size="11">Feedback</text>
+          <text x="460" y="281" text-anchor="middle" fill="#fff" font-size="11">&amp; Programs</text>
+        </a>
+
+        <!-- Team -->
+        <a href="team.html" class="sm-node" tabindex="0" aria-label="Team page">
+          <title>Team</title>
+          <rect x="526" y="248" width="108" height="44" rx="8" fill="#0096c7" stroke="#00b4d8" stroke-width="1.5" />
+          <text x="580" y="267" text-anchor="middle" fill="#fff" font-size="11">Team</text>
+        </a>
+
+        <!-- Sitemap -->
+        <a href="sitemap.html" class="sm-node" tabindex="0" aria-label="Sitemap">
+          <title>Sitemap</title>
+          <rect x="644" y="248" width="108" height="44" rx="8" fill="#0096c7" stroke="#00b4d8" stroke-width="1.5" />
+          <text x="698" y="267" text-anchor="middle" fill="#fff" font-size="11">Sitemap</text>
+        </a>
+
+
+
+        <!-- Content label -->
+        <rect x="340" y="358" width="180" height="36" rx="8" fill="#023e8a" stroke="#90e0ef" stroke-width="1.5"
+          stroke-dasharray="4,2" />
+        <text x="430" y="381" text-anchor="middle" fill="#caf0f8" font-size="12" font-weight="700">Content Pages</text>
+
+        <!-- ===== Level 3: Content pages ===== -->
+        <a href="content_ST1.html" class="sm-node" tabindex="0" aria-label="Content page: Ocean Pollution (Student 1)">
+          <title>Content: Ocean Pollution</title>
+          <rect x="140" y="448" width="120" height="44" rx="8" fill="#48cae4" stroke="#0077b6" stroke-width="1.5" />
+          <text x="200" y="467" text-anchor="middle" fill="#03045e" font-size="10.5">Ocean</text>
+          <text x="200" y="481" text-anchor="middle" fill="#03045e" font-size="10.5">Pollution</text>
+        </a>
+
+        <a href="content_ST2.html" class="sm-node" tabindex="0"
+          aria-label="Content page: Marine Biodiversity (Student 2)">
+          <title>Content: Marine Biodiversity</title>
+          <rect x="280" y="448" width="120" height="44" rx="8" fill="#48cae4" stroke="#0077b6" stroke-width="1.5" />
+          <text x="340" y="467" text-anchor="middle" fill="#03045e" font-size="10.5">Marine</text>
+          <text x="340" y="481" text-anchor="middle" fill="#03045e" font-size="10.5">Biodiversity</text>
+        </a>
+
+        <a href="content_ST3.html" class="sm-node" tabindex="0"
+          aria-label="Content page: Climate and Oceans (Student 3)">
+          <title>Content: Climate &amp; Oceans</title>
+          <rect x="420" y="448" width="120" height="44" rx="8" fill="#48cae4" stroke="#0077b6" stroke-width="1.5" />
+          <text x="480" y="467" text-anchor="middle" fill="#03045e" font-size="10.5">Climate</text>
+          <text x="480" y="481" text-anchor="middle" fill="#03045e" font-size="10.5">&amp; Oceans</text>
+        </a>
+
+        <a href="content_ST3.html" class="sm-node" tabindex="0"
+          aria-label="Content page: Sustainable Fishing (Student 3)">
+          <title>Content: Sustainable Fishing</title>
+          <rect x="560" y="448" width="130" height="44" rx="8" fill="#48cae4" stroke="#0077b6" stroke-width="1.5" />
+          <text x="625" y="467" text-anchor="middle" fill="#03045e" font-size="10.5">Sustainable</text>
+          <text x="625" y="481" text-anchor="middle" fill="#03045e" font-size="10.5">Fishing</text>
+        </a>
+
+        <!-- Legend -->
+        <rect x="20" y="515" width="14" height="14" fill="#0077b6" rx="2" />
+        <text x="40" y="526" fill="#555577" font-size="11">Main pages</text>
+        <rect x="120" y="515" width="14" height="14" fill="#023e8a" stroke="#90e0ef" stroke-width="1.5"
+          stroke-dasharray="4,2" rx="2" />
+        <text x="140" y="526" fill="#555577" font-size="11">Content hub</text>
+        <rect x="240" y="515" width="14" height="14" fill="#48cae4" rx="2" />
+        <text x="260" y="526" fill="#555577" font-size="11">Content pages</text>
+
+      </svg>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="pageEditor_ST3.html">Page Editor (Student 3)</a>
+        <a href="validation_ST3.html">Validation</a>
+        <a href="https://www.w3.org/WAI/" target="_blank" rel="noopener">Accessibility</a>
+      </div>
+      <p class="footer-copy">Student 3 · OceanAct · SDG 14 · University of Westminster · 2025/26</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>
