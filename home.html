@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home – OceanAct | SDG 14</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* =====================================================
+       Embedded CSS – Home Page specific styles only.
+       Must NOT override global CSS rules.
+       ===================================================== */
+
+    /* 1. Interactive gallery grid */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0 2.5rem;
+    }
+
+    /* 2. Gallery tile */
+    .gallery-tile {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      height: 180px;
+      background: var(--primary);
+    }
+
+    /* 3. Tile overlay text */
+    .gallery-tile .tile-label {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 0.8rem 1rem;
+      background: linear-gradient(0deg, rgba(3,4,94,0.85) 0%, transparent 100%);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transform: translateY(0);
+      transition: padding 0.3s;
+    }
+
+    /* 4. Hover lift effect */
+    .gallery-tile:hover {
+      transform: scale(1.04);
+      box-shadow: 0 8px 24px rgba(0,119,182,0.3);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .gallery-tile:hover .tile-label { padding-bottom: 1.4rem; }
+
+    /* 5. Tile emoji icon */
+    .tile-icon {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -60%);
+      font-size: 3rem;
+      transition: transform 0.3s;
+    }
+    .gallery-tile:hover .tile-icon { transform: translate(-50%, -70%) scale(1.15); }
+
+    /* 6. Highlight list items in cards */
+    .card ul {
+      list-style: disc;
+      padding-left: 1.2rem;
+      margin-top: 0.5rem;
+    }
+    .card ul li { font-size: 0.88rem; color: var(--muted); margin-bottom: 0.3rem; }
+
+    /* Background colours per tile */
+    .tile-1 { background: linear-gradient(135deg,#0077b6,#00b4d8); }
+    .tile-2 { background: linear-gradient(135deg,#03045e,#0077b6); }
+    .tile-3 { background: linear-gradient(135deg,#00b4d8,#90e0ef); }
+    .tile-4 { background: linear-gradient(135deg,#023e8a,#48cae4); }
+  </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="header-inner">
+    <a href="home.html" class="logo" aria-label="OceanAct Home">
+      <span class="logo-icon" aria-hidden="true">🌊</span>
+      <span class="logo-text">OceanAct</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="home.html" class="active">Home</a></li>
+        <li><a href="ais.html">Impact Simulator</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="sitemap.html">Sitemap</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== MAIN ===== -->
+<main>
+
+  <!-- Hero banner -->
+  <section class="hero" aria-labelledby="hero-heading">
+    <h1 id="hero-heading">🐠 Protect Life Below Water</h1>
+    <p>Our oceans cover 71% of the Earth — yet they face unprecedented threats from pollution,
+       overfishing, and climate change. Together, we can take action.</p>
+    <a href="ais.html" class="btn btn-secondary">Calculate Your Impact →</a>
+  </section>
+
+  <!-- Mission Cards -->
+  <section aria-labelledby="mission-heading">
+    <h2 id="mission-heading" class="section-title">Why SDG 14 Matters</h2>
+    <div class="section-divider"></div>
+    <p class="section-subtitle">The ocean sustains all life on Earth — here's what you can do about it.</p>
+
+    <div class="card-grid">
+
+      <!-- Card 1 -->
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=400&q=80"
+             alt="Coral reef ecosystem under the sea" />
+        <h3>Ocean Pollution Crisis</h3>
+        <p>Over 8 million tonnes of plastic enter our oceans every year, threatening marine
+           ecosystems and the food chain — including the fish on your plate.</p>
+        <ul>
+          <li>Refuse single-use plastics daily</li>
+          <li>Join local beach clean-up drives</li>
+          <li>Support plastic-free businesses</li>
+        </ul>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1560275619-4662e36fa65c?w=400&q=80"
+             alt="Fish swimming in a coral reef showing biodiversity" />
+        <h3>Marine Biodiversity</h3>
+        <p>More than 50% of the world's oxygen comes from the ocean. Protecting marine species
+           means protecting the air we breathe and the climate we depend on.</p>
+        <ul>
+          <li>Choose sustainably sourced seafood</li>
+          <li>Advocate for marine protected areas</li>
+          <li>Reduce carbon footprint at home</li>
+        </ul>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1504472478235-9bc48ba4d60f?w=400&q=80"
+             alt="Student holding a sign for ocean conservation" />
+        <h3>Students Taking Action</h3>
+        <p>As students, we have real power: every choice, campaign, and conversation creates
+           ripples of change. SDG 14 starts with awareness — and you're already here.</p>
+        <ul>
+          <li>Educate peers about ocean health</li>
+          <li>Start or join an eco-society</li>
+          <li>Volunteer for conservation projects</li>
+        </ul>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Interactive Gallery linking to Content Pages -->
+  <section aria-labelledby="content-heading">
+    <h2 id="content-heading" class="section-title">Explore Our Topics</h2>
+    <div class="section-divider"></div>
+    <p class="section-subtitle">Hover over a topic to learn more — click to dive in.</p>
+
+    <div class="gallery-grid" role="list">
+
+      <a href="content_ST1.html" class="gallery-tile tile-1" role="listitem"
+         aria-label="Explore Ocean Pollution content page">
+        <span class="tile-icon" aria-hidden="true">🗑️</span>
+        <span class="tile-label">Ocean Pollution</span>
+      </a>
+
+      <a href="content_ST2.html" class="gallery-tile tile-2" role="listitem"
+         aria-label="Explore Marine Biodiversity content page">
+        <span class="tile-icon" aria-hidden="true">🐋</span>
+        <span class="tile-label">Marine Biodiversity</span>
+      </a>
+
+      <a href="content_ST3.html" class="gallery-tile tile-3" role="listitem"
+         aria-label="Explore Climate & Oceans content page">
+        <span class="tile-icon" aria-hidden="true">🌡️</span>
+        <span class="tile-label">Climate &amp; Oceans</span>
+      </a>
+
+      <a href="content_ST4.html" class="gallery-tile tile-4" role="listitem"
+         aria-label="Explore Sustainable Fishing content page">
+        <span class="tile-icon" aria-hidden="true">🎣</span>
+        <span class="tile-label">Sustainable Fishing</span>
+      </a>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="pageEditor_ST1.html">Page Editor (Student 1)</a>
+      <a href="validation_ST1.html">Validation</a>
+      <a href="https://www.w3.org/WAI/" target="_blank" rel="noopener">Accessibility</a>
+    </div>
+    <p class="footer-copy">Student 1 · OceanAct · SDG 14 · University of Westminster · 2025/26</p>
+  </div>
+</footer>
+
+</body>
+</html>
