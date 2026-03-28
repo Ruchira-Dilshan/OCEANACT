@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ocean Pollution - OceanAct | SDG 14</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 
   <style>
@@ -19,17 +21,17 @@
 
     /* 1. CSS Variables - matches team palette from style.css */
     :root {
-      --primary:     #0077b6;
-      --secondary:   #00b4d8;
-      --accent:      #90e0ef;
-      --dark:        #03045e;
-      --light:       #caf0f8;
-      --white:       #ffffff;
-      --muted:       #666666;
-      --card-bg:     #f8fdff;
-      --border:      #ddd;
+      --primary: #0077b6;
+      --secondary: #00b4d8;
+      --accent: #90e0ef;
+      --dark: #03045e;
+      --light: #caf0f8;
+      --white: #ffffff;
+      --muted: #666666;
+      --card-bg: #f8fdff;
+      --border: #ddd;
       --font-header: 'Space Grotesk', sans-serif;
-      --font-body:   'Montserrat', sans-serif;
+      --font-body: 'Montserrat', sans-serif;
     }
 
     /* 2. Page background */
@@ -52,6 +54,7 @@
       justify-content: center;
       text-align: center;
     }
+
     .content-hero img {
       position: absolute;
       inset: 0;
@@ -60,23 +63,26 @@
       object-fit: cover;
       filter: brightness(0.45);
     }
+
     .content-hero-text {
       position: relative;
       z-index: 1;
       color: var(--white);
       padding: 1rem 2rem;
     }
+
     .content-hero-text h1 {
       font-family: var(--font-header);
       font-size: clamp(1.8rem, 5vw, 3rem);
       margin: 0 0 0.5rem;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
     }
+
     .content-hero-text p {
       font-size: clamp(0.9rem, 2vw, 1.1rem);
       color: var(--light);
       margin: 0;
-      text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
     }
 
     /* 4. Sticky internal page navigation */
@@ -91,6 +97,7 @@
       gap: 0.5rem 1.2rem;
       align-items: center;
     }
+
     .internal-nav span {
       font-family: var(--font-header);
       font-size: 0.75rem;
@@ -100,6 +107,7 @@
       letter-spacing: 0.05em;
       white-space: nowrap;
     }
+
     .internal-nav a {
       font-family: var(--font-header);
       font-size: 0.82rem;
@@ -107,10 +115,11 @@
       text-decoration: none;
       padding: 0.3rem 0.7rem;
       border-radius: 20px;
-      border: 1px solid rgba(144,224,239,0.3);
+      border: 1px solid rgba(144, 224, 239, 0.3);
       transition: background 0.25s, color 0.25s;
       white-space: nowrap;
     }
+
     .internal-nav a:hover,
     .internal-nav a:focus {
       background: var(--secondary);
@@ -130,6 +139,7 @@
       margin-bottom: 3.5rem;
       scroll-margin-top: 60px;
     }
+
     .content-section h2 {
       font-family: var(--font-header);
       font-size: 1.6rem;
@@ -138,6 +148,7 @@
       padding-left: 0.9rem;
       margin-bottom: 1rem;
     }
+
     .content-section h3 {
       font-family: var(--font-header);
       font-size: 1.1rem;
@@ -145,6 +156,7 @@
       margin-top: 1.5rem;
       margin-bottom: 0.4rem;
     }
+
     .content-section p {
       font-family: var(--font-body);
       color: #1a1a2e;
@@ -158,8 +170,9 @@
       margin: 1.5rem 0;
       border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0,119,182,0.18);
+      box-shadow: 0 4px 20px rgba(0, 119, 182, 0.18);
     }
+
     .content-img-wrap img {
       width: 100%;
       height: 260px;
@@ -167,9 +180,11 @@
       display: block;
       transition: transform 0.4s ease;
     }
+
     .content-img-wrap:hover img {
       transform: scale(1.03);
     }
+
     .content-img-wrap figcaption {
       background: var(--dark);
       color: var(--accent);
@@ -186,6 +201,7 @@
       gap: 1rem;
       margin: 1.5rem 0;
     }
+
     .stat-card {
       background: var(--dark);
       color: var(--white);
@@ -193,6 +209,7 @@
       padding: 1.2rem;
       text-align: center;
     }
+
     .stat-card .stat-num {
       font-family: var(--font-header);
       font-size: 2rem;
@@ -201,6 +218,7 @@
       display: block;
       margin-bottom: 0.3rem;
     }
+
     .stat-card .stat-label {
       font-size: 0.8rem;
       line-height: 1.4;
@@ -213,6 +231,7 @@
       padding: 0;
       margin: 1rem 0;
     }
+
     .action-list li {
       display: flex;
       align-items: flex-start;
@@ -227,6 +246,7 @@
       color: var(--dark);
       line-height: 1.6;
     }
+
     .action-list li .action-icon {
       font-size: 1.4rem;
       flex-shrink: 0;
@@ -246,7 +266,11 @@
     }
 
     /* 11. Go-to-Top button */
-    #top-anchor { display: block; height: 0; }
+    #top-anchor {
+      display: block;
+      height: 0;
+    }
+
     .go-top {
       position: fixed;
       bottom: 2rem;
@@ -261,10 +285,11 @@
       align-items: center;
       justify-content: center;
       font-size: 1.2rem;
-      box-shadow: 0 4px 14px rgba(0,119,182,0.45);
+      box-shadow: 0 4px 14px rgba(0, 119, 182, 0.45);
       transition: background 0.25s, transform 0.25s;
       z-index: 200;
     }
+
     .go-top:hover,
     .go-top:focus {
       background: var(--secondary);
@@ -283,21 +308,30 @@
 
     /* 13. Responsive adjustments */
     @media (max-width: 600px) {
-      .internal-nav { padding: 0.6rem 1rem; }
-      .content-hero  { height: 220px; }
-      .stat-grid     { grid-template-columns: 1fr 1fr; }
+      .internal-nav {
+        padding: 0.6rem 1rem;
+      }
+
+      .content-hero {
+        height: 220px;
+      }
+
+      .stat-grid {
+        grid-template-columns: 1fr 1fr;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <span id="top-anchor"></span>
 
   <header>
     <div class="header-inner">
-      <a href="home.html" class="logo" aria-label="OceanAct Home">
-        <span class="logo-icon" aria-hidden="true"></span>
-        <span class="logo-text">OceanAct</span>
+
+      <a href="home.html" class="logo" aria-label="OceanAct Home"><span class="logo-icon"
+          aria-hidden="true">🌊</span><span class="logo-text">OceanAct</span></a>
       </a>
       <nav aria-label="Main navigation">
         <ul>
@@ -313,11 +347,10 @@
     </div>
   </header>
 
-  <div class="content-hero" role="img" aria-label="Aerial view of ocean waves with plastic pollution visible on the water surface">
-    <img
-      src="https://images.unsplash.com/photo-1621451537084-482c73073a0f?w=1200&auto=format&fit=crop"
-      alt="Plastic waste and pollution floating in ocean water, a stark reminder of the human impact on marine environments"
-    />
+  <div class="content-hero" role="img"
+    aria-label="Aerial view of ocean waves with plastic pollution visible on the water surface">
+    <img src="https://images.unsplash.com/photo-1621451537084-482c73073a0f?w=1200&auto=format&fit=crop"
+      alt="Plastic waste and pollution floating in ocean water, a stark reminder of the human impact on marine environments" />
     <div class="content-hero-text">
       <h1>Ocean Pollution</h1>
       <p>Recognizing the crisis beneath the waves and taking action to address it</p>
@@ -335,14 +368,19 @@
   <main class="content-page" id="main-content">
 
     <p style="font-size:1rem; line-height:1.85; color:#1a1a2e; margin-bottom:2rem;">
-      An estimated <strong>2.2 million species</strong> are found in our oceans, which make up more than 70% of the planet's surface. However, they now confront a growing crisis: these enormous ecosystems are being poisoned by pollution from human activities at a startling rate. In line with <strong>UN SDG 14: Life Below Water</strong>, this article examines the origins, effects, and remedies of ocean pollution.
+      An estimated <strong>2.2 million species</strong> are found in our oceans, which make up more than 70% of the
+      planet's surface. However, they now confront a growing crisis: these enormous ecosystems are being poisoned by
+      pollution from human activities at a startling rate. In line with <strong>UN SDG 14: Life Below Water</strong>,
+      this article examines the origins, effects, and remedies of ocean pollution.
     </p>
 
     <section class="content-section" id="stats" aria-labelledby="stats-heading">
       <h2 id="stats-heading">Global Stats &amp; Facts</h2>
       <div class="section-divider"></div>
       <p>
-        Ocean pollution is not a far-off issue; rather, it is a quantifiable, established concern that has an impact on every individual on the planet. These are some of the most remarkable statistics from environmental organizations and current international studies.
+        Ocean pollution is not a far-off issue; rather, it is a quantifiable, established concern that has an impact on
+        every individual on the planet. These are some of the most remarkable statistics from environmental
+        organizations and current international studies.
       </p>
 
       <div class="stat-grid" role="list">
@@ -373,15 +411,15 @@
       </div>
 
       <div class="callout-box" role="note">
-        "By 2050, there could be more plastic in the ocean by weight than fish - unless we act now." - Ellen MacArthur Foundation
+        "By 2050, there could be more plastic in the ocean by weight than fish - unless we act now." - Ellen MacArthur
+        Foundation
       </div>
 
       <figure class="content-img-wrap">
-        <img
-          src="https://images.unsplash.com/photo-1591017403286-fd8493524e1e?w=900&auto=format&fit=crop"
-          alt="Large amounts of plastic waste sorted and collected on a beach, illustrating the global scale of marine plastic pollution"
-        />
-        <figcaption>Plastic waste collected from ocean shores - a fraction of what remains submerged. Source: Unsplash (royalty-free)</figcaption>
+        <img src="https://images.unsplash.com/photo-1591017403286-fd8493524e1e?w=900&auto=format&fit=crop"
+          alt="Large amounts of plastic waste sorted and collected on a beach, illustrating the global scale of marine plastic pollution" />
+        <figcaption>Plastic waste collected from ocean shores - a fraction of what remains submerged. Source: Unsplash
+          (royalty-free)</figcaption>
       </figure>
     </section>
 
@@ -389,40 +427,53 @@
       <h2 id="causes-heading">Causes of Ocean Pollution</h2>
       <div class="section-divider"></div>
       <p>
-        Ocean pollution is caused by numerous interrelated human activities both on land and at sea, rather than having a single source. The first step in treating these factors is to comprehend them.
+        Ocean pollution is caused by numerous interrelated human activities both on land and at sea, rather than having
+        a single source. The first step in treating these factors is to comprehend them.
       </p>
 
       <h3>Plastic Waste</h3>
       <p>
-        Bottles, bags, straws, and packaging are examples of single-use plastics that are manufactured in massive numbers worldwide. A large portion of this material is disposed of incorrectly and eventually ends up in rivers and the ocean. Instead of completely biodegrading, plastics break down into <strong>microplastics</strong>, which are minuscule pieces smaller than 5 mm that linger in the environment for hundreds of years and are consumed by marine life at every stage of the food chain.
+        Bottles, bags, straws, and packaging are examples of single-use plastics that are manufactured in massive
+        numbers worldwide. A large portion of this material is disposed of incorrectly and eventually ends up in rivers
+        and the ocean. Instead of completely biodegrading, plastics break down into <strong>microplastics</strong>,
+        which are minuscule pieces smaller than 5 mm that linger in the environment for hundreds of years and are
+        consumed by marine life at every stage of the food chain.
       </p>
 
       <h3>Industrial Discharge</h3>
       <p>
-        Untreated or partially treated effluent is frequently released into rivers and coastal areas by factories and industrial units. In addition to chemical solvents and other pollutants that build up in marine sediments and organisms, this wastewater may contain hazardous heavy metals like mercury, lead, and cadmium. 
+        Untreated or partially treated effluent is frequently released into rivers and coastal areas by factories and
+        industrial units. In addition to chemical solvents and other pollutants that build up in marine sediments and
+        organisms, this wastewater may contain hazardous heavy metals like mercury, lead, and cadmium.
       </p>
 
       <h3>Agricultural Runoff</h3>
       <p>
-        Rainfall carries pesticides and fertilizers used in farming into rivers and eventually the ocean. Eutrophication is the term for algal blooms brought on by an overabundance of nutrients, especially nitrogen and phosphorus. The majority of marine species cannot survive in hypoxic zones created by these blooms, which reduce the amount of oxygen in the water.
+        Rainfall carries pesticides and fertilizers used in farming into rivers and eventually the ocean. Eutrophication
+        is the term for algal blooms brought on by an overabundance of nutrients, especially nitrogen and phosphorus.
+        The majority of marine species cannot survive in hypoxic zones created by these blooms, which reduce the amount
+        of oxygen in the water.
       </p>
 
       <h3>Oil Spills &amp; Shipping</h3>
       <p>
-        Although major oil spills garner a lot of media attention, regular shipping activities, such as the release of ballast water, fuel leaks, and cargo spills, contribute a significant and continuous amount of hydrocarbon pollution to the oceans. Oil suffocates coastal environments, covers seabird feathers, and jams fish gills.
+        Although major oil spills garner a lot of media attention, regular shipping activities, such as the release of
+        ballast water, fuel leaks, and cargo spills, contribute a significant and continuous amount of hydrocarbon
+        pollution to the oceans. Oil suffocates coastal environments, covers seabird feathers, and jams fish gills.
       </p>
 
       <h3>Urban Sewage &amp; Litter</h3>
       <p>
-        In many parts of the world, untreated or partially treated sewage finds its way into the ocean, bringing with it extra nutrients, medicines, and diseases. Rain and wind carry urban garbage from parks, pavements, and storm drains straight into the ocean.
+        In many parts of the world, untreated or partially treated sewage finds its way into the ocean, bringing with it
+        extra nutrients, medicines, and diseases. Rain and wind carry urban garbage from parks, pavements, and storm
+        drains straight into the ocean.
       </p>
 
       <figure class="content-img-wrap">
-        <img
-          src="https://images.unsplash.com/photo-1611270629569-8b357cb88da9?w=900&auto=format&fit=crop"
-          alt="An overflowing rubbish dump near a coastal area showing how land-based waste contributes to ocean pollution"
-        />
-        <figcaption>Land-based waste near coastal areas is a primary driver of ocean pollution. Source: Unsplash (royalty-free)</figcaption>
+        <img src="https://images.unsplash.com/photo-1611270629569-8b357cb88da9?w=900&auto=format&fit=crop"
+          alt="An overflowing rubbish dump near a coastal area showing how land-based waste contributes to ocean pollution" />
+        <figcaption>Land-based waste near coastal areas is a primary driver of ocean pollution. Source: Unsplash
+          (royalty-free)</figcaption>
       </figure>
     </section>
 
@@ -430,35 +481,48 @@
       <h2 id="effects-heading">Effects on Marine Life</h2>
       <div class="section-divider"></div>
       <p>
-        Ocean pollution has an impact on human health, food security, and livelihoods at every level of marine ecosystems, from microscopic plankton to the largest whales.
+        Ocean pollution has an impact on human health, food security, and livelihoods at every level of marine
+        ecosystems, from microscopic plankton to the largest whales.
       </p>
 
       <h3>Entanglement and Ingestion</h3>
       <p>
-        Marine creatures, such as seabirds, dolphins, seals, and sea turtles, may entangle themselves in abandoned fishing gear (often called "ghost nets") or consume plastic waste that they mistake for prey. Internal cuts, hunger, and digestive system blockage are all caused by ingested plastic. Over <strong>90% of seabird species</strong> are thought to have consumed plastic at some time in their lives, according to studies.
+        Marine creatures, such as seabirds, dolphins, seals, and sea turtles, may entangle themselves in abandoned
+        fishing gear (often called "ghost nets") or consume plastic waste that they mistake for prey. Internal cuts,
+        hunger, and digestive system blockage are all caused by ingested plastic. Over <strong>90% of seabird
+          species</strong> are thought to have consumed plastic at some time in their lives, according to studies.
       </p>
 
       <h3>Coral Reef Degradation</h3>
       <p>
-        Despite making up less than 1% of the ocean floor, coral reefs, often referred to as the "rainforests of the sea", support about 25% of all marine species. When paired with ocean warming, pollution impairs coral immunity, encourages illness, and causes <strong>coral bleaching</strong> episodes. The entire ecosystem that a reef supports collapses as it bleaches and dies.
+        Despite making up less than 1% of the ocean floor, coral reefs, often referred to as the "rainforests of the
+        sea", support about 25% of all marine species. When paired with ocean warming, pollution impairs coral immunity,
+        encourages illness, and causes <strong>coral bleaching</strong> episodes. The entire ecosystem that a reef
+        supports collapses as it bleaches and dies.
       </p>
 
       <h3>Bioaccumulation of Toxins</h3>
       <p>
-        Plankton and tiny fish carry heavy metals and persistent organic pollutants (POPs) from industrial discharge into the food chain. These toxins build up at higher concentrations as larger animals eat smaller ones; this process is known as <strong>biomagnification</strong>. Humans who regularly eat seafood are at great risk for health problems due to the extremely high amounts of mercury and PCBs found in apex predators like tuna, sharks, and orcas.
+        Plankton and tiny fish carry heavy metals and persistent organic pollutants (POPs) from industrial discharge
+        into the food chain. These toxins build up at higher concentrations as larger animals eat smaller ones; this
+        process is known as <strong>biomagnification</strong>. Humans who regularly eat seafood are at great risk for
+        health problems due to the extremely high amounts of mercury and PCBs found in apex predators like tuna, sharks,
+        and orcas.
       </p>
 
       <h3>Ocean Dead Zones</h3>
       <p>
-        Algal blooms are fueled by nitrogen overloads caused by agricultural runoff. Large volumes of dissolved oxygen are used by the microorganisms that break down these dead algae, resulting in <strong>hypoxic dead zones</strong> where practically no marine life can live. The Mississippi River's discharge feeds the Gulf of Mexico dead zone, which can grow to the size of New Jersey during the summer.
+        Algal blooms are fueled by nitrogen overloads caused by agricultural runoff. Large volumes of dissolved oxygen
+        are used by the microorganisms that break down these dead algae, resulting in <strong>hypoxic dead
+          zones</strong> where practically no marine life can live. The Mississippi River's discharge feeds the Gulf of
+        Mexico dead zone, which can grow to the size of New Jersey during the summer.
       </p>
 
       <figure class="content-img-wrap">
-        <img
-          src="https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=900&auto=format&fit=crop"
-          alt="A bleached white coral reef surrounded by murky water, demonstrating the devastating impact of pollution and ocean warming on marine ecosystems"
-        />
-        <figcaption>Bleached coral reefs are one of the most visible signs of ocean degradation. Source: Unsplash (royalty-free)</figcaption>
+        <img src="https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=900&auto=format&fit=crop"
+          alt="A bleached white coral reef surrounded by murky water, demonstrating the devastating impact of pollution and ocean warming on marine ecosystems" />
+        <figcaption>Bleached coral reefs are one of the most visible signs of ocean degradation. Source: Unsplash
+          (royalty-free)</figcaption>
       </figure>
     </section>
 
@@ -466,64 +530,77 @@
       <h2 id="action-heading">What Individuals Can Do</h2>
       <div class="section-divider"></div>
       <p>
-        Every level of action is needed to combat ocean pollution, from international policy to personal everyday decisions. We can all take significant, doable action now as citizens and students.
+        Every level of action is needed to combat ocean pollution, from international policy to personal everyday
+        decisions. We can all take significant, doable action now as citizens and students.
       </p>
 
       <ul class="action-list" aria-label="Practical actions to reduce ocean pollution">
         <li>
           <span class="action-icon" aria-hidden="true"></span>
           <div>
-            <strong>Discard single-use plastics.</strong> Bring a coffee cup, water bottle, and reusable bag. Refrain from using plastic cutlery and straws. If these tiny changes are broadly implemented, millions of tonnes of plastic might be kept out of the ocean.
+            <strong>Discard single-use plastics.</strong> Bring a coffee cup, water bottle, and reusable bag. Refrain
+            from using plastic cutlery and straws. If these tiny changes are broadly implemented, millions of tonnes of
+            plastic might be kept out of the ocean.
           </div>
         </li>
         <li>
           <span class="action-icon" aria-hidden="true"></span>
           <div>
-            <strong>Participate in or plan a beach clean-up.</strong> Work with nearby environmental organizations to clear litter from beaches and waterways. Hundreds of kg of rubbish can be collected in a single event with a small crew.
+            <strong>Participate in or plan a beach clean-up.</strong> Work with nearby environmental organizations to
+            clear litter from beaches and waterways. Hundreds of kg of rubbish can be collected in a single event with a
+            small crew.
           </div>
         </li>
         <li>
           <span class="action-icon" aria-hidden="true"></span>
           <div>
-            <strong>Choose sustainable seafood.</strong> Look for Marine Stewardship Council (MSC) certification when shopping. Consumer demand directly influences fishing and aquaculture practices worldwide.
+            <strong>Choose sustainable seafood.</strong> Look for Marine Stewardship Council (MSC) certification when
+            shopping. Consumer demand directly influences fishing and aquaculture practices worldwide.
           </div>
         </li>
         <li>
           <span class="action-icon" aria-hidden="true"></span>
           <div>
-            <strong>Recycle properly.</strong> When plastics are recycled improperly, they wind up in landfills and, frequently, the ocean. Sort waste carefully, especially plastics, and be aware of your local recycling regulations. 
+            <strong>Recycle properly.</strong> When plastics are recycled improperly, they wind up in landfills and,
+            frequently, the ocean. Sort waste carefully, especially plastics, and be aware of your local recycling
+            regulations.
           </div>
         </li>
         <li>
           <span class="action-icon" aria-hidden="true"></span>
           <div>
-            <strong>Never dump unwanted medications down the toilet</strong> in order to properly dispose of them. Fish hormones and behavior have been shown to be impacted by pharmaceuticals in wastewater. Give any leftover medication back to the pharmacy.
+            <strong>Never dump unwanted medications down the toilet</strong> in order to properly dispose of them. Fish
+            hormones and behavior have been shown to be impacted by pharmaceuticals in wastewater. Give any leftover
+            medication back to the pharmacy.
           </div>
         </li>
         <li>
           <span class="action-icon" aria-hidden="true"></span>
           <div>
-            <strong>Spread trustworthy information</strong> on ocean pollution to advocate and raise awareness. Sign petitions in favor of stricter environmental laws. Systemic change is produced by political pressure and cannot be accomplished by individual activity alone.
+            <strong>Spread trustworthy information</strong> on ocean pollution to advocate and raise awareness. Sign
+            petitions in favor of stricter environmental laws. Systemic change is produced by political pressure and
+            cannot be accomplished by individual activity alone.
           </div>
         </li>
         <li>
           <span class="action-icon" aria-hidden="true"></span>
           <div>
-            <strong>Use eco-friendly products.</strong> Choose biodegradable soaps, reef-safe sunscreen, and phosphate-free detergents to prevent dangerous chemicals entering waterways from everyday household use.
+            <strong>Use eco-friendly products.</strong> Choose biodegradable soaps, reef-safe sunscreen, and
+            phosphate-free detergents to prevent dangerous chemicals entering waterways from everyday household use.
           </div>
         </li>
       </ul>
 
       <figure class="content-img-wrap">
-        <img
-          src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=900&auto=format&fit=crop"
-          alt="Volunteers wearing gloves picking up plastic rubbish and litter during a community beach clean-up event by the ocean"
-        />
-        <figcaption>Community beach clean-ups are one of the most direct and impactful actions individuals can take. Source: Unsplash (royalty-free)</figcaption>
+        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=900&auto=format&fit=crop"
+          alt="Volunteers wearing gloves picking up plastic rubbish and litter during a community beach clean-up event by the ocean" />
+        <figcaption>Community beach clean-ups are one of the most direct and impactful actions individuals can take.
+          Source: Unsplash (royalty-free)</figcaption>
       </figure>
 
       <div class="callout-box" role="note">
-        "The ocean is not a rubbish bin. Every piece of plastic you refuse, reuse, or recycle is a vote for the world you want to live in."
+        "The ocean is not a rubbish bin. Every piece of plastic you refuse, reuse, or recycle is a vote for the world
+        you want to live in."
       </div>
 
       <p>
@@ -541,13 +618,14 @@
   <footer>
     <div class="footer-inner">
       <div class="footer-links">
-        <a href="pageEditor_ST1.html">Page Editor: Saarujan Shanthakumar</a>
+        <a href="pageEditor_ST1.html">Page Editor: Saarujan </a>
         <a href="validation_ST1.html">Validation</a>
         <a href="https://www.w3.org/WAI/" target="_blank" rel="noopener">Accessibility</a>
       </div>
-      <p class="footer-copy">Student 1 · OceanAct · SDG 14 · University of Westminster · 2025/26</p>
+      <p class="footer-copy">Saarujan · OceanAct · SDG 14 · University of Westminster · 2025/26</p>
     </div>
   </footer>
 
 </body>
+
 </html>
