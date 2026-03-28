@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marine Biodiversity – OceanAct | SDG 14</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+
+
+    .content-layout {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    @media (max-width: 720px) {
+      .content-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .side-nav {
+        display: none;
+      }
+    }
+
+    .side-nav {
+      position: sticky;
+      top: 80px;
+      background:
+        var(--card-bg);
+      border:
+        1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.2rem;
+    }
+
+    .side-nav h4 {
+      color: var(--primary);
+      margin-bottom: 0.8rem;
+      font-size: 0.95rem;
+    }
+
+    .side-nav ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .side-nav ul li a {
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: block;
+      padding: 0.25rem 0 0.25rem 0.5rem;
+      border-left: 3px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .side-nav ul li a:hover {
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+
+    .content-article section {
+      margin-bottom: 2.5rem;
+    }
+
+    .content-article h1,
+    .content-article h2 {
+      color: var(--primary);
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .content-img {
+      width: 100%;
+      max-height: 280px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin: 1rem 0;
+      border:
+        2px solid var(--border);
+    }
+
+    h3 {
+      font-size: medium;
+      color: #00b4d8;
+      margin-top: 1.5rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .go-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--primary);
+      color: var(--white);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 44px;
+      font-size: 1.2rem;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0, 119, 182, 0.3);
+      z-index: 500;
+    }
+
+    .go-top:hover {
+      background: var(--dark);
+      color: var(--white);
+    }
+
+    #page-top {
+      display: block;
+      position: relative;
+      top: -80px;
+    }
+
+    header {
+      font-family: var(--font-header);
+    }
+
+    h1 {
+      font-family: var(--font-header);
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 0.4rem;
+    }
+
+    p {
+      font-family: var(--font-body);
+    }
+
+    ul {
+      font-family: var(--font-body);
+    }
+  </style>
+</head>
+
+<body>
+  <span id="page-top"></span>
+  <header>
+    <div class="header-inner">
+      <a href="home.html" class="logo" aria-label="OceanAct Home"><span class="logo-icon"
+          aria-hidden="true">🌊</span><span class="logo-text">OceanAct</span></a>
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="ais.html">Impact Simulator</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="sitemap.html">Sitemap</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="content-layout">
+      <aside class="side-nav" aria-label="Page sections">
+        <h2>Contents</h2>
+        <ul>
+          <li><a href="#intro">Introduction</a></li>
+          <li><a href="#species">Key Species</a></li>
+          <li><a href="#threats">Threats</a></li>
+          <li><a href="#conservation">Conservation</a></li>
+          <li><a href="#resources">Resources</a></li>
+        </ul>
+      </aside>
+      <article class="content-article">
+        <h1>🐋 Marine Biodiversity</h1>
+        <p style="color:var(--muted);margin-bottom:1.5rem;">Exploring the richness of life in our oceans </p>
+
+        <section id="intro">
+          <h2>Introduction</h2>
+          <p>Marine biodiversity can be defined as the diversity of life that occurs in our oceans such as the tiniest
+            plankton or the gigantic blue whale. These are the most complicated ecosystems on earth, comprising more
+            than 70 per cent of the earth and hosting an estimated number of 250,000 known species, not to mention
+            millions more that remain to be discovered.</p>
+
+          <h3>The Vertical Layers of Life</h3>
+          <p>Life in the oceans is not in a random manner, it is arranged into zones, according to the depth and extent
+            to which sunlight reaches them.</p>
+          <ul style="list-style:disc;padding-left:1.5rem;color:var(--muted);">
+            <li style="margin-bottom:0.5rem;"><strong style="color:var(--dark);">The Sunlight (Epipelagic)
+                Zone:</strong> This layer is the highest layer that contains the maximum amount of marine life starting
+              at the surface to approximately 200 meters. Photosynthesis takes place there, sustaining the coral reefs
+              and giant schools of fish.</li>
+            <li style="margin-bottom:0.5rem;"><strong style="color:var(--dark);">The Twilight (Mesopelagic)
+                Zone:</strong> 200 to 1,000 meters Light is dim. Animals in this area such as the lanternfish tend to
+              have large eyes, or they survive through bioluminescence.</li>
+            <li style="margin-bottom:0.5rem;"><strong style="color:var(--dark);">The Midnight (Bathypelagic)
+                Zone:</strong> Deep ocean: There is no sunlight in the deep ocean. Life requires the presence of
+              maritime snow (thrown down by organic particles) or the chemical energy of hydrothermal vents.</li>
+            <li style="margin-bottom:0.5rem;"><strong style="color:var(--dark);">The Abyssal Zone:</strong> This is the
+              deepest layer, from 4,000 to 6,000 meters deep, characterized by near-freezing temperatures and complete
+              darkness.</li>
+          </ul>
+          <img
+            src="https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcQBEtw56PxbdddtZU0A2KGLHFeTMVdF1FZX45V08edHQAt1aYbDbOBJlqVk_xNP1Ccb3n2v49LWNgi3lt8bWXtgQH7Syxu999cXKDw1t3_KBpFlsFA"
+            style="border-radius: 20px; width: 100%; max-width: 900px;" alt="ocean zone image" />
+          <h3>Key Marine Ecosystems</h3>
+
+          <p>Marine biodiversity is concentrated in specific "hotspots" that serve as nurseries and feeding grounds for
+            thousands of species</p>
+          <ul style="list-style:disc;padding-left:1.5rem;color:var(--muted);">
+            <li><strong>Coral Reefs:</strong> Coral reefs can be referred to as the rainforests of the sea despite the
+              fact they are only found in less than 1 percent of the ocean floor and sustain 25 percent of the entire
+              marine life.</li>
+            <li><strong>Kelp Forests:</strong> Underwater trees that give home to sea otters, fish and invertebrates.
+            </li>
+            <li><strong>Open Ocean (Pelagic):</strong> The expansive blue areas where the migratory fish such as tuna,
+              sharks and whales feed.</li>
+            <li><strong>Hydrothermal Vents:</strong> This is a unique place where life exists in a chemical environment
+              (ex: hydrogen sulfide).</li>
+          </ul>
+          <h3>Why Marine Biodiversity is Important.</h3>
+
+          <p>The ocean health is directly correlated with the planet health. The marine life carries out a number of
+            important functions:</p>
+
+          <ul style="list-style:disc;padding-left:1.5rem;color:var(--muted);">
+            <li><strong>Carbon Sequestration:</strong> Oceans receive about a quarter of the carbon dioxide generated by
+              people, which regulates the climate in the world.</li>
+            <li><strong>Oxygen Production:</strong> In seas, the oxygen is created by the process of photosynthesis by
+              tiny marine plants known as Phytoplankton, and they produce half of the oxygen on the planet.</li>
+            <li><strong>Economic Resource:</strong> Coastal communities are dependent on the ocean as a source of food,
+              medicine, and livelihoods by billions of people.</li>
+          </ul>
+          <br>
+          <img src="https://www.marinebiodiversity.ca/wp-content/uploads/2025/03/ocean-carbon-sequestration-process.jpg"
+            alt="Ocean carbon sequestration process" style="border-radius: 8px; width: 100%; max-width: 900px;" />
+          <h3>Current Challenges</h3>
+          <p>Marine biodiversity is under great pressure due to climate change, overfishing, and plastic pollution even
+            despite its resilience. On the negative side, an increase in temperatures causes coral bleaching and ocean
+            acidification (obtained by the absorption of CO 2 ) makes shellfish and corals unable to create their
+            skeletons.</p>
+          <p>The exploration and conservation of these maritime frontiers is also among the most significant scientific
+            issues of the 21 st century.</p>
+        </section>
+
+        <section id="species">
+          <h2>Key Species at Risk</h2>
+          <br>
+          <p>Marine biodiversity is at a crossroad as we head to 2026. Whereas there are some species that are
+            exhibiting signs of recovery through the intense conservation, there are also numerous others that are at
+            unprecedented risks by the climate, overfishing and loss of habitat.</p>
+          <p><strong>The following are the most threatened marine species that are presently known:</strong></p>
+          <p>These species are literally on the edge of extinction and their populations can be only a few thousand (or
+            dozens of them).</p>
+          <ul style="list-style:disc;padding-left:1.5rem;color:var(--muted);">
+            <li><strong>Vaquita Porpoise: </strong>This is the most endangered marine mammal in the world that can be
+              found in the northern Gulf of California. Its population is put at single digits and this is mainly
+              because of unintentional traps in the unlawful gillnets.</li>
+            <li><strong>European Eel:</strong>The population size once was very high, but has sharply declined in the
+              last decades by 95%. It is at risk of overfishing, pollution, and dam blocking of migration routes a
+              three-fold threat.</li>
+            <li><strong>Blackchin Guitarfish: </strong>This is a shovelnose ray that resembles a crossbreed between a
+              shark and a ray. Its slow reproduction and overfishing has seen it become a priority of 2026 conservation
+              in the Mediterranean and Atlantic.</li>
+          </ul>
+          <br>
+          <div style="display: flex; gap: 20px; flex-wrap: wrap; align-items: flex-start;">
+            <figure style="margin: 0; flex: 1; min-width: 300px;">
+              <img src="https://www.wildlifenomads.com/wp-content/uploads/2025/09/vaquita-swimming.webp"
+                alt="Vaquita porpoise swimming in the ocean" style="border-radius: 8px; width: 100%; height: auto;" />
+              <figcaption style="color: var(--muted, #666); font-size: 0.85rem; text-align: left; margin-top: 0.5rem;">
+                The critically endangered Vaquita porpoise
+              </figcaption>
+            </figure>
+            <figure style="margin: 0; flex: 1; min-width: 300px;">
+              <img
+                src="https://www.nausicaa.fr/sites/default/files/styles/cm_1440x800/public/node/animal/2023-06/Raie%20guitare-Nausicaa%20COUV.jpg.webp?itok=SJN1SxeN"
+                alt="Blackchin guitarfish resting on the ocean floor"
+                style="border-radius: 8px; width: 100%; height: auto;" />
+              <figcaption style="color: var(--muted, #666); font-size: 0.85rem; text-align: left; margin-top: 0.5rem;">
+                The critically endangered Blackchin guitarfish
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section>
+          <h3>Migratory Giants</h3>
+          <p>The most recent UN reports in 2026 indicate that almost 50 percent of the total species of migrating
+            species are on the decline.</p>
+          <ul style="list-style:disc;padding-left:1.5rem;color:var(--muted);">
+            <li><strong>North Atlantic Right Whale: </strong> This is a highly susceptible species with less than 360
+              individuals in existence, which are at risk of being hit by the shipping vessels or entangled in fishing
+              equipment.</li>
+            <li><strong>Migratory Sharks and Rays:</strong> Over a third of the entire species of sharks and rays are
+              now threatened with extinction. The demand on the fins and unintentional bycatch have contributed to the
+              enormous depletion of such species as the Oceanic Whitetip or Great Hammerhead.</li>
+            <li><strong>Hawksbill Turtle:</strong> They are endangered and it is because of the disappearance of nesting
+              beaches (sea-level rise) and the value of their beautiful shells being smuggled.</li>
+          </ul>
+          <br>
+          <div style="display: flex; gap: 20px; flex-wrap: wrap; align-items: flex-start;">
+            <figure style="margin: 0; flex: 1; min-width: 300px;">
+              <img
+                src="https://people.com/thmb/O13MWaroGpsJlhCVmQMAaulibqI=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(999x0:1001x2)/north-atlantic-right-whale-54cbcb04ed5c452cb71250cb389ccc91.jpg"
+                alt="North Atlantic right whale breaching the ocean surface"
+                style="border-radius: 8px; width: 100%; height: auto;" />
+              <figcaption style="color: var(--muted, #666); font-size: 0.85rem; text-align: left; margin-top: 0.5rem;">
+                The critically endangered North Atlantic right whale
+              </figcaption>
+            </figure>
+            <figure style="margin: 0; flex: 1; min-width: 300px;">
+              <img src="https://www.fisheries.noaa.gov/s3//dam-migration/hawksbill_sea_turtle.jpg"
+                alt="Hawksbill turtle nesting on a beach" style="border-radius: 8px; width: 100%; height: auto;" />
+              <figcaption style="color: var(--muted, #666); font-size: 0.85rem; text-align: left; margin-top: 0.5rem;">
+                The critically endangered Hawksbill turtle
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section id="threats">
+          <h2>Threats to Biodiversity</h2>
+          <p>The impacts of marine biodiversity in the year 2026 have ceased being an issue of concern in the future,
+            but rather an issue that is now considered to be in the state of Global Water Bankruptcy by the UN
+            scientists. This is an actual reality because most ocean environments have gone beyond their tipping points
+            and may not be restored to their former conditions.</p>
+          <p><strong>The main causes of this crisis are the following:</strong></p>
+          <h3>Climatic Change and Darkening of the Oceans.</h3>
+          <ul style="list-style:disc;padding-left:1.5rem;color:var(--muted);">
+            <li>Approximately 25% of anthropogenic $CO_2$, and 90 percent of the added heat are absorbed in the ocean.
+              This has precipitated a number of trickle down effects</li>
+            <li>The Fourth Global Coral Bleaching Event: This is the largest and most severe global coral bleaching
+              event in history, which is projected to kill 90 percent of reefs due to a rise in temperature by 1.5°C.
+            </li>
+            <li>Ocean Darkening: A relatively new discovery of process that is affecting the deep-sea food web is the
+              reduction in the penetration of light in areas across large regions, brought about by sediments and
+              biological alterations.</li>
+            <li>Ocean Acidification: The ocean has fallen to an average pH of 8.1 which is 30% lower than it was prior
+              to industrialization. This makes the skeletons of corals and shells of oysters and planktons weak.</li>
+          </ul>
+          <br>
+          <img src="https://scx2.b-cdn.net/gfx/news/hires/2023/climate-change-is-alte.jpg"
+            style="border-radius: 8px; width: 100%; max-width: 900px; height: auto;"
+            alt="Image showing the impact of climate change on marine ecosystems" />
+          <h3>Industrialized Overfishing</h3>
+          <p>Overfishing remains a dominant threat. In 2026, the world will be facing the most extensive and severe
+            coral bleaching event since 1997, posing the potential to destroy up to 90% of the reefs in case the
+            temperature rises by 1.5°C.</p>
+          <img src="https://ecori.org/wp-content/uploads/2024/11/BottomTrawling-1024x504.png"
+            style="border-radius:8px; width: 100%; max-width: 900px;"
+            alt="Image showing the impact of bottom trawling on marine ecosystems" />
+
+          <h3>The Plastic Surge</h3>
+          <p>It is approximated that the quantity of plastic that is currently present in the ocean is 75 to 199 million
+            tonnes between 2026.</p>
+          <ul style="list-style:disc;padding-left:1.5rem;color:var(--muted);">
+            <li><strong>Microplastics:</strong> About 92% of ocean plastic has now been in the form of microplastics
+              (less than 5mm). These are found in 60 percent of fish, getting into the human food chain.</li>
+            <li><strong>Deep-Sea Accumulation: </strong>It is estimated that 11 million tons of plastic are now
+              deposited on the ocean floor.</li>
+            <li><strong>The Great Pacific Garbage Patch:</strong> This patch has expanded to about 1.6 million square
+              kilometers.</li>
+          </ul>
+          <br>
+          <img
+            src="https://ourworldindata.org/cdn-cgi/imagedelivery/qLq-8BTgXU8yG0N6HnOy8g/6fb8ea2d-168f-4ecd-078a-d6f656e55100/w=6451"
+            alt="where does the plastic accumulate in water"
+            style="border-radius: 8px; width: 100%; max-width: 900px; height: auto;" />
+
+          <h3>Wildlife Destruction and Nourishment Contamination.</h3>
+          <p>Wetland Loss: Within the past 5 decades, natural wetlands have been lost by 410 million hectares; important
+            nurseries of marine life.</p>
+          <p>Dead Zones: Farm runoff causes eutrophication, leading to algal blooms that strip oxygen from the water.
+          </p>
+          <img src="https://wasserdreinull.de/wp-content/uploads/Fig1_Ecosystem_Uptake_EN.jpg"
+            alt="how does the pollution effect organisms"
+            style="border-radius: 8px; width: 100%; max-width: 900px; height: auto;" />
+        </section>
+
+        <section id="conservation">
+          <h2>Conservation in Action</h2>
+          <p>Conservation strategies in 2026 focus on resilience and the "30 by 30" goal (protecting 30% of the ocean by
+            2030).</p>
+          <figure style="margin: 0;">
+            <img src="https://sigmaearth.com/wp-content/uploads/2025/05/word-image-73478-1.png"
+              alt="Conservation efforts and coral restoration"
+              style="border-radius: 8px; width: 100%; max-width: 900px;" />
+            <figcaption style="color: var(--muted, #666); font-size: 0.85rem; text-align: center; margin-top: 0.5rem;">
+              The impact of climate change on marine ecosystems and active restoration
+            </figcaption>
+          </figure>
+          <br>
+        </section>
+
+        <section id="resources">
+          <h2>Resources</h2>
+          <ul style="list-style:disc;padding-left:1.5rem;color:var(--muted);">
+            <li><a href="https://www.iucnredlist.org/" target="_blank" rel="noopener">IUCN Red List</a></li>
+            <li><a href="https://www.msc.org" target="_blank" rel="noopener">Marine Stewardship Council</a></li>
+            <li><a href="https://www.worldwildlife.org/habitats/oceans" target="_blank" rel="noopener">WWF Ocean
+                Conservation</a></li>
+            <li><a href="https://oceandecade.org/" target="_blank" rel="noopener">Ocean Decade</a></li>
+            <li><a href="https://coralrestoration.org/" target="_blank" rel="noopener">Coral Restoration Foundation</a>
+            </li>
+          </ul>
+        </section>
+      </article>
+    </div>
+  </main>
+  <a href="#page-top" class="go-top" aria-label="Go to top of page">↑</a>
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="pageEditor_ST2.html">Page Editor: Ruchira</a>
+        <a href="validation_ST2.html">Validation</a>
+
+      </div>
+      <p class="footer-copy">Ruchira · OceanAct · SDG 14 · University of Westminster · 2025/26</p>
+    </div>
+  </footer>
+</body>
+
+</html>
