@@ -1,164 +1,322 @@
 <!DOCTYPE html>
 <html lang="en">
-<style>
-  :root {
-    --primary: #0077b6;
-    --secondary: #00b4d8;
-    --accent: #90e0ef;
-    --dark: #03045e;
-    --light: #caf0f8;
-    --white: #ffffff;
-    --muted: #666666;
-    --card-bg: #f8fdff;
-    --border: #ddd;
-    --font-header: 'Space Grotesk', sans-serif;
-    --font-body: 'Montserrat', sans-serif;
-  }
-
-  p {
-    font-family: var(--font-body);
-    color: var(--dark);
-    text-align: justify;
-  }
-</style>
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Validator Page Student - provide your student name</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Validation - Ruchira | OceanAct</title>
 
-  <link rel="stylesheet" href="css/pageEditor_validator.css"> <!-- External CSS link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="css/pageEditor_validator.css">
 
+  <style>
+    .content-layout {
+      display: grid;
+      grid-template-columns: 1fr 260px;
+      gap: 2rem;
+      align-items: start;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .content-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .side-nav {
+        display: none;
+      }
+    }
+
+    .side-nav {
+      position: sticky;
+      top: 80px;
+      background: var(--card-bg, #ffffff);
+      border: 1px solid var(--border, #e0e0e0);
+      border-radius: 10px;
+      padding: 1.2rem;
+    }
+
+    .side-nav h3 {
+      color: var(--primary, #0077b6);
+      margin-bottom: 0.8rem;
+      font-size: 1.1rem;
+      border-bottom: 1px solid var(--border, #e0e0e0);
+      padding-bottom: 0.5rem;
+    }
+
+    .side-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .side-nav ul li a {
+      font-size: 0.9rem;
+      color: var(--muted, #666);
+      display: block;
+      padding: 0.25rem 0 0.25rem 0.5rem;
+      border-left: 3px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+      text-decoration: none;
+    }
+
+    .side-nav ul li a:hover {
+      color: var(--primary, #0077b6);
+      border-color: var(--primary, #0077b6);
+    }
+
+    .side-nav ul ul {
+      margin-left: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .content-article section {
+      margin-bottom: 2.5rem;
+    }
+
+    .content-article h1,
+    .content-article h2 {
+      color: var(--primary, #0077b6);
+      border-bottom: 2px solid var(--border, #e0e0e0);
+      padding-bottom: 0.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .content-article h3 {
+      font-size: 1.1rem;
+      color: #00b4d8;
+      margin-top: 1.5rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .content-article p {
+      margin-bottom: 1rem;
+    }
+
+    .go-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--primary, #0077b6);
+      color: #ffffff;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 44px;
+      font-size: 1.2rem;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0, 119, 182, 0.3);
+      z-index: 500;
+      transition: background 0.2s;
+    }
+
+    .go-top:hover {
+      background: var(--dark, #03045e);
+      color: #ffffff;
+    }
+
+    #page-top {
+      display: block;
+      position: relative;
+      top: -80px;
+    }
+
+    header {
+      font-family: var(--font-header, 'Space Grotesk', sans-serif);
+    }
+
+    h1 {
+      font-family: var(--font-header, 'Space Grotesk', sans-serif);
+      font-size: 2.5rem;
+      color: var(--primary, #0077b6);
+      margin-bottom: 0.4rem;
+    }
+
+    p,
+    ul,
+    li,
+    td,
+    th {
+      font-family: var(--font-body, 'Montserrat', sans-serif);
+      line-height: 1.6;
+    }
+
+    td {
+      padding: 8px;
+      border: 1px solid var(--border, #e0e0e0);
+    }
+
+    th {
+      padding: 8px;
+      border: 1px solid var(--border, #e0e0e0);
+      background-color: var(--bg-light, #f8f9fa);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .stud h1 {
+      text-align: center;
+      font-size: 2.2rem;
+    }
+
+    .stud p {
+      text-align: center;
+      font-size: 1.2rem;
+      color: var(--muted, #666666);
+    }
+  </style>
 </head>
 
 <body>
-
-  <!-- Update the header and the footer to be consistent with the rest of the pages you implemented -->
-
-  <header id="top">
-    <h1>OCEANACT</h1>
+  <span id="page-top"></span>
+  <header>
+    <div class="header-inner">
+      <a href="home.html" class="logo" aria-label="OceanAct Home"><span class="logo-icon"
+          aria-hidden="true">🌊</span><span class="logo-text">OceanAct</span></a>
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="ais.html">Impact Simulator</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="sitemap.html">Sitemap</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <section class="stud">
-    <h2>Ruchira, OCEANACT, UX designer and JS developer</h2>
-  </section>
+  <main>
+    <section class="stud" style="margin: 2rem 0 3rem 0;">
+      <h1>Ruchira, OCEANACT</h1>
+      <p>UX designer and JS developer</p>
+    </section>
 
-  <div class="container">
-    <!-- Main content area -->
-    <main>
+    <div class="content-layout">
+      <!-- Main content area -->
+      <article class="content-article">
+        <section id="splashVal">
+          <h2>Splash screen validation report</h2>
+          <p>The OceanAct splash page looks great thanks to its deep colour scheme based on aquatic colours and
+            advanced typography.
 
-      <!-- Update the content of the following sections with the information that corresponds to the pages you implemented  -->
+            The dark blue background with cyan accents (dark: #03045e and 00b4d8) works perfectly with the theme
+            of SDG 14 of Life Below Water.
 
-      <section>
-        <h2 id="splashVal">splash screen validation report</h2>
-        <p>The OceanAct splash page looks great thanks to its deep colour scheme based on aquatic colours and
-          advanced typography.
+            The design includes a fogged background video and a bobbing wave icon, which give the user a smooth
+            experience of a mission that is both educational and easy to use before they even get to the home
+            page.<br><br>
+            It also clearly shows the project's mission statement and the names of the people who made it:
+            Saarujan, Ruchira, and Omika. This makes sure that the people who made it are directly connected to
+            the project's goal of protecting the ocean.
 
-          The dark blue background with cyan accents (dark: #03045e and 00b4d8) works perfectly with the theme
-          of SDG 14 of Life Below Water.
+            The app works well and is powerful from a technical point of view.
+            The visible countdown and the visible button called "Skip Intro" show that the app respects the
+            user's time and gives it a sense of motion without slowing down.<br><br>
+            There are two layers to the redirection logic: one with a
+            &lt;meta&gt; refresh tag and the other with a JavaScript timer. This makes it possible to switch to
+            home.html in any browser.
+            A combination of readable code and useful content creates a professional digital handshake that
+            successfully closes the gap between the landing page and the solution itself.
+            <br><br>
+          </p>
+          <img src="./images/splash-validation.png" alt="Splash Validation">
 
-          The design includes a fogged background video and a bobbing wave icon, which give the user a smooth
-          experience of a mission that is both educational and easy to use before they even get to the home
-          page.<br><br>
-          It also clearly shows the project's mission statement and the names of the people who made it:
-          Saarujan, Ruchira, and Omika. This makes sure that the people who made it are directly connected to
-          the project's goal of protecting the ocean.
+          <h3>Back to Page Editor page</h3>
+          <p><a href="pageEditor_ST2.html#splash">Click here to go to the page editor</a></p>
+        </section>
 
-          The app works well and is powerful from a technical point of view.
-          The visible countdown and the visible button called "Skip Intro" show that the app respects the
-          user's time and gives it a sense of motion without slowing down.<br><br>
-          There are two layers to the redirection logic: one with a
-          <meta> refresh tag and the other with a JavaScript timer. This makes it possible to switch to
-          home.html in any browser.
-          A combination of readable code and useful content creates a professional digital handshake that
-          successfully closes the gap between the landing page and the solution itself.
-          <br><br>
-          <img src="./images/splash-validation.png">
+        <section id="content_st2Val">
+          <h2>Content ST2 validation report</h2>
+          <p>The Ocean Biodiversity page is a well-organised and informative resource that strikes a good balance
+            between teaching and urging people to take action on SDG 14.
+            The page starts with a scientific explanation of the ocean's vertical layers, from the Sunlight Zone
+            to the Abyssal Zone. <br><br>Then it moves on to the harsh realities of 2026,
+            "Global Water Bankruptcy" and the Fourth Global Coral Bleaching Event. Adding certain critically
+            endangered species, like the Vaquita Porpoise and Blackchin Guitarfish,
+            larger ecological data adds a human-interest element that is needed.
+            <br><br>The page is a full "hotspot" for marine advocacy, with a clean, modern design that makes it
+            easy for anyone to understand complicated topics like ocean acidification and carbon sequestration.
+          </p>
+          <img src="./images/content-st2-validation.png" alt="Content ST2 Validation">
 
-        <h3>Back to Page Editor page</h3>
-        <p><a href="pageEditor_ST2.html">Click here to go to the page editor </a></p>
-        <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
-      </section>
+          <h3>Back to Page Editor page</h3>
+          <p><a href="pageEditor_ST2.html#content">Click here to go to the page editor</a></p>
+        </section>
 
-      <section id="content_st2Val">
-        <h2 id="content_st2Val">Content ST2 validation report</h2>
-        <p>The Ocean Biodiversity page is a well-organised and informative resource that strikes a good balance
-          between teaching and urging people to take action on SDG 14.
-          The page starts with a scientific explanation of the ocean's vertical layers, from the Sunlight Zone
-          to the Abyssal Zone. <br><br>Then it moves on to the harsh realities of 2026,
-          "Global Water Bankruptcy" and the Fourth Global Coral Bleaching Event. Adding certain critically
-          endangered species, like the Vaquita Porpoise and Blackchin Guitarfish,
-          arger ecological data adds a human-interest element that is needed.
-          <br><br>The page is a full "hotspot" for marine advocacy, with a clean, modern design that makes it
-          easy for anyone to understand complicated topics like ocean acidification and carbon sequestration.
-        </p>
-        <img src="./images/content-st2-validation.png">
+        <section id="aisVal">
+          <h2>Action impact simulator validation report</h2>
+          <p>The Action Impact Simulator (AIS) is a fun and interactive part of the OceanAct project that makes
+            environmental activism into a game. <br><br>The page gives specific actions, like refusing
+            single-use plastics or planting native coastal plants, real point values, which turn vague
+            conservation goals into a personalised "impact score." Dynamic background transitions, where the
+            pictures change from simple ocean waves to a colourful coral reef as the user's score goes up,
+            are a great way to show how they are helping to achieve SDG 14.
+            The tool is easy to use because it uses ARIA roles and keyboard navigation to make sure that
+            everyone can see how far they have come toward becoming an "Ocean Champion."</p>
+          <img src="./images/content-st2-validation.png" alt="AIS Validation">
 
-        <h3>Back to Page Editor page</h3>
-        <p><a href="pageEditor_ST2.html#volunteer">Click here to go to the page editor
+          <h3>Back to Page Editor page</h3>
+          <p><a href="pageEditor_ST2.html#ais">Click here to go to the page editor</a></p>
+        </section>
+      </article>
 
-      </section></a></p>
+      <!-- Sidebar area -->
+      <aside class="side-nav" aria-label="Page sections">
+        <h3>Core pages developed:</h3>
 
-      <section id="aisVal">
-        <h2 id="aisVal">Action impact simulator validation report</h2>
-        <p>The Action Impact Simulator (AIS) is a fun and interactive part of the OceanAct project that makes
-          environmental activism into a game. <br><br>The page gives specific actions, like refusing
-          single-use plastics or planting native coastal plants, real point values, which turn vague
-          conservation goals into a personalised "impact score." Dynamic background transitions, where the
-          pictures change from simple ocean waves to a colourful coral reef as the user's score goes up,
-          are a great way to show how they are helping to achieve SDG 14.
-          The tool is easy to use because it uses ARIA roles and keyboard navigation to make sure that
-          everyone can see how far they have come toward becoming a "Ocean Champion."</p>
-        <img src="./images/content-st2-validation.png">
+        <!-- Customize this to the role you undertook. Keep only the list items you were responsible to develop, delete the rest -->
+        <ul class="top-level-ul">
+          <!-- Keep only the list items you were responsible to develop, delete the rest and update the links to the corresponding markers -->
+          <li>Student 1</li>
+          <ul>
+            <li><a href="home.html">Home page </a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="content_ST1.html">Content</a></li>
+            <li><a href="style.css">style.css</a></li>
+          </ul>
+          <li>Student 2</li>
+          <ul>
+            <li><a href="splash.html">Splash Screen</a></li>
+            <li><a href="ais.html">Action Impact Simulator</a></li>
+            <li><a href="content_ST2.html">Content</a></li>
+          </ul>
 
-        <h3>Back to Page Editor page</h3>
-        <p><a href="pageEditor_ST2.html#content">Include a link back to the corresponding section of the Page
-            Editor.</a></p>
-        <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
-      </section></a></p>
-
-
-      <p class="top"><a href="#top">Go top</a></p>
-    </main>
-
-    <!-- Sidebar area -->
-    <aside>
-      <h3>Core pages developed:</h3>
-
-      <!-- Customize this to the role you undertook. Keep only the list items you were responsible to develop, delete the rest -->
-      <ul class="top-level-ul">
-        <!-- Keep only the list items you were responsible to develop, delete the rest and update the links to the corresponding markers -->
-        <li>Student 1</li>
-        <ul>
-          <li><a href="#home">Home page </a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#content">Content</a></li>
+          <li>Student 3</li>
+          <ul>
+            <li><a href="feedback.html">Feedback</a> </li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="content_ST3.html">Content</a></li>
+            <li><a href="sitemap.html">Sitemap</a></li>
+          </ul>
         </ul>
-        <li>Student 2</li>
-        <ul>
-          <li><a href="#">Splash Screen</a></li>
-          <li><a href="#">Action Impact Simulator</a></li>
-          <li><a href="#">Content</a></li>
-        </ul>
+      </aside>
+    </div>
+  </main>
 
-        <li>Student 3</li>
-        <ul>
-          <li><a href="#">Feedback</a> </li>
-          <li><a href="#">Team</a></li>
-          <li><a href="#">Content</a></li>
-        </ul>
-        <li>Student 4</li>
-        <ul>
-          <li><a href="#">User Profile </a></li>
-          <li><a href="#">Sitemap</a></li>
-          <li><a href="#">Content</a></li>
-        </ul>
-      </ul>
-    </aside>
-  </div>
-
+  <a href="#page-top" class="go-top" aria-label="Go to top of page">↑</a>
   <footer>
-    <p>Replace the footer with your teams' website footer</p>
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="pageEditor_ST2.html">Page Editor: Ruchira</a>
+        <a href="validation_ST2.html">Validation</a>
+      </div>
+      <p class="footer-copy">Ruchira · OceanAct · SDG 14 · University of Westminster · 2025/26</p>
+    </div>
   </footer>
 </body>
 
