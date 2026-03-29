@@ -25,16 +25,7 @@
       --font-body: 'Montserrat', sans-serif;
     }
 
-    /* Body background image */
-    body {
-      background-image:
-        linear-gradient(rgb(178, 179, 248), rgba(255, 255, 255, 0.25));
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      background-repeat: no-repeat;
-      font-family: var(--font-body);
-    }
+    /* Body background is inherited from style.css (var(--white)) */
 
     /* 1. Interactive gallery grid */
     .gallery-grid {
@@ -219,22 +210,19 @@
       <div class="section-divider"></div>
       <p class="section-subtitle">Hover over a topic to learn more — click to dive in.</p>
 
-      <div class="gallery-grid" role="list">
+      <div class="gallery-grid">
 
-        <a href="content_ST1.html" class="gallery-tile tile-1" role="listitem"
-          aria-label="Explore Ocean Pollution content page">
+        <a href="content_ST1.html" class="gallery-tile tile-1" aria-label="Explore Ocean Pollution content page">
           <span class="tile-icon" aria-hidden="true">🗑️</span>
           <span class="tile-label">Ocean Pollution</span>
         </a>
 
-        <a href="content_ST2.html" class="gallery-tile tile-2" role="listitem"
-          aria-label="Explore Marine Biodiversity content page">
+        <a href="content_ST2.html" class="gallery-tile tile-2" aria-label="Explore Marine Biodiversity content page">
           <span class="tile-icon" aria-hidden="true">🐋</span>
           <span class="tile-label">Marine Biodiversity</span>
         </a>
 
-        <a href="content_ST3.html" class="gallery-tile tile-3" role="listitem"
-          aria-label="Explore Climate & Oceans content page">
+        <a href="content_ST3.html" class="gallery-tile tile-3" aria-label="Explore Climate & Oceans content page">
           <span class="tile-icon" aria-hidden="true">🌡️</span>
           <span class="tile-label">Climate &amp; Oceans</span>
         </a>
