@@ -6,248 +6,480 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page Editor Student 1 - Saarujan</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="css/pageEditor_validator.css"> <!-- External CSS link -->
 
+    <style>
+        .content-layout {
+            display: grid;
+            grid-template-columns: 1fr 260px;
+            gap: 2rem;
+            align-items: start;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        header {
+            background-color: var(--dark, #03045e);
+        }
+
+        footer {
+            background-color: var(--dark, #03045e);
+        }
+
+        @media (max-width: 768px) {
+            .content-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .side-nav {
+                display: none;
+            }
+        }
+
+        .side-nav {
+            position: sticky;
+            top: 80px;
+            background: var(--card-bg, #ffffff);
+            border: 1px solid var(--border, #e0e0e0);
+            border-radius: 10px;
+            padding: 1.2rem;
+        }
+
+        .side-nav h3 {
+            color: var(--primary, #0077b6);
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border-bottom: 1px solid var(--border, #e0e0e0);
+            padding-bottom: 0.5rem;
+        }
+
+        .side-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .side-nav ul li a {
+            font-size: 0.9rem;
+            color: var(--muted, #666);
+            display: block;
+            padding: 0.25rem 0 0.25rem 0.5rem;
+            border-left: 3px solid transparent;
+            transition: color 0.2s, border-color 0.2s;
+            text-decoration: none;
+        }
+
+        .side-nav ul li a:hover {
+            color: var(--primary, #0077b6);
+            border-color: var(--primary, #0077b6);
+        }
+
+        .side-nav ul ul {
+            margin-left: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-article section {
+            margin-bottom: 2.5rem;
+        }
+
+        .content-article h1,
+        .content-article h2 {
+            color: var(--primary, #0077b6);
+            border-bottom: 2px solid var(--border, #e0e0e0);
+            padding-bottom: 0.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-article h3 {
+            font-size: 1.1rem;
+            color: #00b4d8;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .content-article p {
+            margin-bottom: 1rem;
+        }
+
+        .go-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--primary, #0077b6);
+            color: #ffffff;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 44px;
+            font-size: 1.2rem;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0, 119, 182, 0.3);
+            z-index: 500;
+            transition: background 0.2s;
+        }
+
+        .go-top:hover {
+            background: var(--dark, #03045e);
+            color: #ffffff;
+        }
+
+        #page-top {
+            display: block;
+            position: relative;
+            top: -80px;
+        }
+
+        header {
+            font-family: var(--font-header, 'Space Grotesk', sans-serif);
+        }
+
+        h1 {
+            font-family: var(--font-header, 'Space Grotesk', sans-serif);
+            font-size: 2.5rem;
+            color: var(--primary, #0077b6);
+            margin-bottom: 0.4rem;
+        }
+
+        p,
+        ul,
+        li,
+        td,
+        th {
+            font-family: var(--font-body, 'Montserrat', sans-serif);
+            line-height: 1.6;
+        }
+
+        td {
+            padding: 8px;
+            border: 1px solid var(--border, #e0e0e0);
+        }
+
+        th {
+            color: #03045e;
+            padding: 8px;
+            border: 1px solid var(--border, #e0e0e0);
+            background-color: var(--bg-light, #f8f9fa);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stud h1 {
+            text-align: center;
+            font-size: 2.2rem;
+        }
+
+        .stud p {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--muted, #666666);
+        }
+    </style>
 </head>
 
 <body>
-
-    <header id="top">
-        <h1>Protect Life Below Water</h1>
-    </header>
-
-    <section class="stud">
-        <h2>Saarujan Shanthakumar | Team: OceanAct | Student 1</h2>
-    </section>
-
-    <div class="container">
-        <!-- Main content area -->
-        <main>
-
-            <section>
-                <h2 id="home">Home page</h2>
-                <h3>Technical Description</h3>
-                <p>The Home page uses an external CSS stylesheet to maintain a coherent design system, utilizing custom
-                    CSS variables (e.g., `--primary`, `--secondary`) for colours and typography. Layout is structured
-                    using semantic HTML tags (`&lt;header&gt;`, `&lt;main&gt;`, `&lt;section&gt;`, `&lt;article&gt;`).
-                    Distinct sections, such as "Why life below water matters," use CSS Grid (`display: grid`) mapped
-                    through a `.card-grid` to display responsive cards. A key interactive element is the `.gallery-tile`
-                    system, using CSS hover transform properties (`transform: scale()`) and linear gradients with
-                    transparent overlays to surface tile labels on hover.</p>
-
-                <h3>Accessibility</h3>
-                <p>Accessibility was actively incorporated through precise ARIA labels (`aria-label`, `aria-hidden`),
-                    especially on the logo icons and navigation lists. Non-decorative images have descriptive `alt`
-                    attributes. Standard semantic landmarks like `&lt;nav&gt;`, `&lt;main&gt;`, and `&lt;footer&gt;`
-                    were utilized to ensure screen reader compatibility. Contrasting colour values were evaluated to
-                    ensure text is legible against the varied gradient backgrounds of the gallery tiles.</p>
-
-                <h3>Link to the validation page</h3>
-                <p><a href="validation_ST1.html#splashVal">Link to the validation page</a>. Use the marker to jump to
-                    the corresponding section of the validation page.</p>
-
-                <h3>Link to the page</h3>
-                <p><a href="home.html">Include a link to the actual page you describe.</a></p>
-            </section>
-
-            <section>
-                <h2 id="gallery">Gallery Page</h2>
-                <h3>Technical Description</h3>
-                <p>The Gallery page implements a dynamically generated thumbnail grid. An underlying JavaScript array of
-                    objects maps image metrics to HTML `&lt;article class="thumb-card"&gt;` nodes using document
-                    creation methods. A significant interactive feature is the modal viewer component
-                    (`#modal-overlay`). Clicking any grid node changes the modal style attributes to `display: flex` and
-                    pushes contextual content attributes into internal target nodes. Furthermore, local `&lt;select&gt;`
-                    widgets enable dynamic mutation of aesthetic variables (background colours and font families)
-                    through attached event listeners rendering localised adjustments instantly upon change.</p>
-
-                <h3>Accessibility</h3>
-                <p>Navigating the complex gallery architecture maintains profound keyboard and screen reader
-                    accessibility via explicit ARIA property administration. Visually injected JS cards employ
-                    `tabindex="0"`, natively handling `keydown` EventListeners identifying "Space" and "Enter" inputs
-                    equivalently aligned to mouse click actions. Active popups declare `aria-modal="true"`, ensuring
-                    screen readers recognize context transitions and logically bind focus onto functional internal
-                    closure buttons (`#modal-close`).</p>
-
-                <h3>Link to the validation page</h3>
-                <p><a href="validation_ST1.html#volunteerVal">Link to the validation page</a>. Use the marker to jump to
-                    the corresponding section of the validation page.</p>
-
-
-                <h3>Link to the page</h3>
-                <p><a href="gallery.html">Include a link to the actual page you describe.</a></p>
-            </section>
-
-            <section>
-                <h2 id="content">Content Page</h2>
-                <h3>Technical Description</h3>
-                <p>The "Ocean Pollution" Content Page leverages a structurally readable flow centered inside a
-                    `max-width: 900px` main wrapper. Distinct to this environment is a specialized sticky internal
-                    navigation component (`position: sticky`), enabling efficient multi-sectional anchor navigation. We
-                    also used `scroll-margin-top` to ensure section titles perfectly align below the adjacent headers
-                    dynamically. We interspersed the informative text with `.stat-card` graphical modules displaying
-                    flexible wrap conditions mapped within local grid scopes `display: grid; grid-template-columns:
-                    repeat(auto-fill, minmax(180px, 1fr))` seamlessly integrating layout and typography.</p>
-
-                <h3>Accessibility</h3>
-                <p>Clear responsive topography is managed continuously through clamped properties (`clamp()`) mapping
-                    text scales effectively based on the viewport. Navigational jump links communicate absolute context
-                    through distinct labeled parameters, preventing confusion. Furthermore, semantic ordering
-                    establishes solid logical relationships naturally parsed successfully throughout all `&lt;h2&gt;`,
-                    `&lt;h3&gt;` headings. A visually apparent "Go to top" anchor with an `aria-label` provides a simple
-                    way to traverse back through the content flow.</p>
-
-                <h3>Link to the validation page</h3>
-                <p><a href="validation_ST1.html#contentVal">Link to the validation page</a>. Use the marker to jump to
-                    the corresponding section of the validation page.</p>
-
-
-                <h3>Link to the page</h3>
-                <p><a href="content_ST1.html">Include a link to the actual page you describe.</a></p>
-            </section>
-
-            <section>
-                <h2 id="challenge"> Challenges and Lessons Learned</h2>
-                <p>A notable challenge emerged whilst engineering robust interactive DOM nodes within the Gallery page
-                    without compromising accessibility. Ensuring injected DOM fragments could handle focus correctly
-                    needed thoughtful listener attachments (`keydown` and `click`) alongside careful evaluation of ARIA
-                    structures (`role="listitem"`). Overcoming these hurdles emphasized the magnitude of separating
-                    content, style, and logic systematically. Another challenge was managing CSS variables seamlessly
-                    beside page-specific styles, which was resolved by strictly scoping local configurations to avoid
-                    overwriting the global `.css` baseline.</p>
-            </section>
-
-            <section>
-                <h2 id="compliance"> Compliance</h2>
-                <p>Compliance across pages actively adheres to criteria necessitated by the Janet Acceptable Use Policy
-                    framework. The digital deployment comprises educational, non-commercial knowledge respecting
-                    standard intellectual property conventions. Specifically, all media utilizes natively licensed,
-                    royalty-free assets (sourced correctly through Unsplash), thereby ensuring there is no infringement
-                    of copyright or unauthorized transmission of protected material across network borders.</p>
-
-
-            </section>
-
-            <section>
-                <h2 id="group"> Group Meetings and Individual Contribution Log</h2>
-
-                <table>
-
-                    <thead>
-                        <tr>
-                            <th colspan="6">Group Meetings and Contribution Log</th>
-                        </tr>
-                        <tr>
-                            <th>Meeting</th>
-                            <th>Date &amp; Time</th>
-                            <th>Format</th>
-                            <th>Objective</th>
-                            <th>Attended</th>
-                            <th>Your Individual Contribution</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>3 Feb 2026</td>
-                            <td>Face-to-face</td>
-                            <td>Agree SDG and assign roles</td>
-                            <td>Yes</td>
-                            <td>I agreed to take responsibility for the Home Page and template styles.</td>
-                        </tr>
-
-                        <tr>
-                            <td>2</td>
-                            <td>17 Feb 2026</td>
-                            <td>Online</td>
-                            <td>Review Home Page design</td>
-                            <td>Yes</td>
-                            <td>I established the CSS colour palette and grid properties mapping to the initial
-                                prototype.</td>
-                        </tr>
-
-                        <tr>
-                            <td>3</td>
-                            <td>03 Mar 2026</td>
-                            <td>Hybrid</td>
-                            <td>Prototyping technical implementations</td>
-                            <td>No</td>
-                            <td>Reviewed asynchronous meeting metrics executing Javascript DOM generation for the
-                                Gallery.</td>
-                        </tr>
-
-                        <tr>
-                            <td>4</td>
-                            <td>10 Mar 2026</td>
-                            <td>Face-to-face</td>
-                            <td>Accessibility verification</td>
-                            <td>Yes</td>
-                            <td>Audited interface dependencies applying semantic ARIA components comprehensively.</td>
-                        </tr>
-
-                        <tr>
-                            <td>5</td>
-                            <td>15 Mar 2026</td>
-                            <td>Online</td>
-                            <td>Draft Content mapping structures</td>
-                            <td>Yes</td>
-                            <td>Finalized layout components defining resilient grid container strategies dynamically.
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>6</td>
-                            <td>24 Mar 2026</td>
-                            <td>Hybrid</td>
-                            <td>Final Validation preparations</td>
-                            <td>Yes</td>
-                            <td>Processed W3C checks and successfully compiled the Page Editor reporting metrics.</td>
-                        </tr>
-
-                    </tbody>
-
-                </table>
-
-            </section>
-
-            <section>
-                <h2 id="ref">References</h2>
-                <ul class="ref">
-                    <li>Unsplash (2025) <i>Unsplash - The internet's source of freely-usable images.</i> Available at:
-                        <a href="https://unsplash.com/">https://unsplash.com/</a> (Last accessed: 24 Mar 2026).</li>
-                    <li>Google Fonts (2025) <i>Space Grotesk and Montserrat Families.</i> Available at: <a
-                            href="https://fonts.google.com/">https://fonts.google.com/</a> (Last accessed: 15 Mar 2026).
-                    </li>
-                    <li>Duckett, J., 2011. HTML and CSS: Design and Build Websites,<i>John Willey&amp;Sons. Inc.
-                            Indianappolis.</i></li>
-                </ul>
-            </section>
-
-            <p class="top"><a href="#top">Go top</a></p>
-        </main>
-
-        <!-- Sidebar area -->
-        <aside>
-            <h3>Core pages developed:</h3>
-            <ul class="top-level-ul">
-                <li>Student 1</li>
-                <ul>
-                    <li><a href="#home">Home page</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#content">Content</a></li>
-                </ul>
-                <li><a href="#challenge">Challenges and Lessons Learned</a></li>
-                <li><a href="#compliance">Compliance</a></li>
-                <li><a href="#group">Group Meetings and Individual Contribution Log</a></li>
-                <li><a href="#ref">References</a></li>
-            </ul>
-        </aside>
+    <span id="page-top"></span>
+  <header>
+    <div class="header-inner">
+      <a href="home.html" class="logo" aria-label="OceanAct Home"><span class="logo-icon"
+          aria-hidden="true">🌊</span><span class="logo-text">OceanAct</span></a>
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="ais.html">Impact Simulator</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="sitemap.html">Sitemap</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <footer>
-        <p>Protect Life Below Water | University of Westminster</p>
-    </footer>
+    <main>
+        <section class="stud" style="margin: 2rem 0 3rem 0;">
+            <h1>Saarujan Shanthakumar</h1>
+            <p>Team: OceanAct | Student 1</p>
+        </section>
+
+        <div class="content-layout">
+            <!-- Main content area -->
+            <article class="content-article">
+
+                <section>
+                    <h2 id="home">Home page</h2>
+                    <h3>Technical Description</h3>
+                    <p>The Home page uses an external CSS stylesheet to maintain a coherent design system, utilizing
+                        custom
+                        CSS variables (e.g., `--primary`, `--secondary`) for colours and typography. Layout is
+                        structured
+                        using semantic HTML tags (`&lt;header&gt;`, `&lt;main&gt;`, `&lt;section&gt;`,
+                        `&lt;article&gt;`).
+                        Distinct sections, such as "Why life below water matters," use CSS Grid (`display: grid`) mapped
+                        through a `.card-grid` to display responsive cards. A key interactive element is the
+                        `.gallery-tile`
+                        system, using CSS hover transform properties (`transform: scale()`) and linear gradients with
+                        transparent overlays to surface tile labels on hover.</p>
+
+                    <h3>Accessibility</h3>
+                    <p>Accessibility was actively incorporated through precise ARIA labels (`aria-label`,
+                        `aria-hidden`),
+                        especially on the logo icons and navigation lists. Non-decorative images have descriptive `alt`
+                        attributes. Standard semantic landmarks like `&lt;nav&gt;`, `&lt;main&gt;`, and `&lt;footer&gt;`
+                        were utilized to ensure screen reader compatibility. Contrasting colour values were evaluated to
+                        ensure text is legible against the varied gradient backgrounds of the gallery tiles.</p>
+
+                    <h3>Link to the validation page</h3>
+                    <p><a href="validation_ST1.html#splashVal">Link to the validation page</a>. Use the marker to jump
+                        to
+                        the corresponding section of the validation page.</p>
+
+                    <h3>Link to the page</h3>
+                    <p><a href="home.html">Include a link to the actual page you describe.</a></p>
+                </section>
+
+                <section>
+                    <h2 id="gallery">Gallery Page</h2>
+                    <h3>Technical Description</h3>
+                    <p>The Gallery page implements a dynamically generated thumbnail grid. An underlying JavaScript
+                        array of
+                        objects maps image metrics to HTML `&lt;article class="thumb-card"&gt;` nodes using document
+                        creation methods. A significant interactive feature is the modal viewer component
+                        (`#modal-overlay`). Clicking any grid node changes the modal style attributes to `display: flex`
+                        and
+                        pushes contextual content attributes into internal target nodes. Furthermore, local
+                        `&lt;select&gt;`
+                        widgets enable dynamic mutation of aesthetic variables (background colours and font families)
+                        through attached event listeners rendering localised adjustments instantly upon change.</p>
+
+                    <h3>Accessibility</h3>
+                    <p>Navigating the complex gallery architecture maintains profound keyboard and screen reader
+                        accessibility via explicit ARIA property administration. Visually injected JS cards employ
+                        `tabindex="0"`, natively handling `keydown` EventListeners identifying "Space" and "Enter"
+                        inputs
+                        equivalently aligned to mouse click actions. Active popups declare `aria-modal="true"`, ensuring
+                        screen readers recognize context transitions and logically bind focus onto functional internal
+                        closure buttons (`#modal-close`).</p>
+
+                    <h3>Link to the validation page</h3>
+                    <p><a href="validation_ST1.html#volunteerVal">Link to the validation page</a>. Use the marker to
+                        jump to
+                        the corresponding section of the validation page.</p>
+
+
+                    <h3>Link to the page</h3>
+                    <p><a href="gallery.html">Include a link to the actual page you describe.</a></p>
+                </section>
+
+                <section>
+                    <h2 id="content">Content Page</h2>
+                    <h3>Technical Description</h3>
+                    <p>The "Ocean Pollution" Content Page leverages a structurally readable flow centered inside a
+                        `max-width: 900px` main wrapper. Distinct to this environment is a specialized sticky internal
+                        navigation component (`position: sticky`), enabling efficient multi-sectional anchor navigation.
+                        We
+                        also used `scroll-margin-top` to ensure section titles perfectly align below the adjacent
+                        headers
+                        dynamically. We interspersed the informative text with `.stat-card` graphical modules displaying
+                        flexible wrap conditions mapped within local grid scopes `display: grid; grid-template-columns:
+                        repeat(auto-fill, minmax(180px, 1fr))` seamlessly integrating layout and typography.</p>
+
+                    <h3>Accessibility</h3>
+                    <p>Clear responsive topography is managed continuously through clamped properties (`clamp()`)
+                        mapping
+                        text scales effectively based on the viewport. Navigational jump links communicate absolute
+                        context
+                        through distinct labeled parameters, preventing confusion. Furthermore, semantic ordering
+                        establishes solid logical relationships naturally parsed successfully throughout all
+                        `&lt;h2&gt;`,
+                        `&lt;h3&gt;` headings. A visually apparent "Go to top" anchor with an `aria-label` provides a
+                        simple
+                        way to traverse back through the content flow.</p>
+
+                    <h3>Link to the validation page</h3>
+                    <p><a href="validation_ST1.html#contentVal">Link to the validation page</a>. Use the marker to jump
+                        to
+                        the corresponding section of the validation page.</p>
+
+
+                    <h3>Link to the page</h3>
+                    <p><a href="content_ST1.html">Include a link to the actual page you describe.</a></p>
+                </section>
+
+                <section>
+                    <h2 id="challenge"> Challenges and Lessons Learned</h2>
+                    <p>A notable challenge emerged whilst engineering robust interactive DOM nodes within the Gallery
+                        page
+                        without compromising accessibility. Ensuring injected DOM fragments could handle focus correctly
+                        needed thoughtful listener attachments (`keydown` and `click`) alongside careful evaluation of
+                        ARIA
+                        structures (`role="listitem"`). Overcoming these hurdles emphasized the magnitude of separating
+                        content, style, and logic systematically. Another challenge was managing CSS variables
+                        seamlessly
+                        beside page-specific styles, which was resolved by strictly scoping local configurations to
+                        avoid
+                        overwriting the global `.css` baseline.</p>
+                </section>
+
+                <section>
+                    <h2 id="compliance"> Compliance</h2>
+                    <p>Compliance across pages actively adheres to criteria necessitated by the Janet Acceptable Use
+                        Policy
+                        framework. The digital deployment comprises educational, non-commercial knowledge respecting
+                        standard intellectual property conventions. Specifically, all media utilizes natively licensed,
+                        royalty-free assets (sourced correctly through Unsplash), thereby ensuring there is no
+                        infringement
+                        of copyright or unauthorized transmission of protected material across network borders.</p>
+
+
+                </section>
+
+                <section>
+                    <h2 id="group"> Group Meetings and Individual Contribution Log</h2>
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th colspan="6">Group Meetings and Contribution Log</th>
+                            </tr>
+                            <tr>
+                                <th>Meeting</th>
+                                <th>Date &amp; Time</th>
+                                <th>Format</th>
+                                <th>Objective</th>
+                                <th>Attended</th>
+                                <th>Your Individual Contribution</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>3 Feb 2026</td>
+                                <td>Face-to-face</td>
+                                <td>Agree SDG and assign roles</td>
+                                <td>Yes</td>
+                                <td>I agreed to take responsibility for the Home Page and template styles.</td>
+                            </tr>
+
+                            <tr>
+                                <td>2</td>
+                                <td>17 Feb 2026</td>
+                                <td>Online</td>
+                                <td>Review Home Page design</td>
+                                <td>Yes</td>
+                                <td>I established the CSS colour palette and grid properties mapping to the initial
+                                    prototype.</td>
+                            </tr>
+
+                            <tr>
+                                <td>3</td>
+                                <td>03 Mar 2026</td>
+                                <td>Hybrid</td>
+                                <td>Prototyping technical implementations</td>
+                                <td>No</td>
+                                <td>Reviewed asynchronous meeting metrics executing Javascript DOM generation for the
+                                    Gallery.</td>
+                            </tr>
+
+                            <tr>
+                                <td>4</td>
+                                <td>10 Mar 2026</td>
+                                <td>Face-to-face</td>
+                                <td>Accessibility verification</td>
+                                <td>Yes</td>
+                                <td>Audited interface dependencies applying semantic ARIA components comprehensively.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>5</td>
+                                <td>15 Mar 2026</td>
+                                <td>Online</td>
+                                <td>Draft Content mapping structures</td>
+                                <td>Yes</td>
+                                <td>Finalized layout components defining resilient grid container strategies
+                                    dynamically.
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>6</td>
+                                <td>24 Mar 2026</td>
+                                <td>Hybrid</td>
+                                <td>Final Validation preparations</td>
+                                <td>Yes</td>
+                                <td>Processed W3C checks and successfully compiled the Page Editor reporting metrics.
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </section>
+
+                <section>
+                    <h2 id="ref">References</h2>
+                    <ul class="ref">
+                        <li>Unsplash (2025) <i>Unsplash - The internet's source of freely-usable images.</i> Available
+                            at:
+                            <a href="https://unsplash.com/">https://unsplash.com/</a> (Last accessed: 24 Mar 2026).
+                        </li>
+                        <li>Google Fonts (2025) <i>Space Grotesk and Montserrat Families.</i> Available at: <a
+                                href="https://fonts.google.com/">https://fonts.google.com/</a> (Last accessed: 15 Mar
+                            2026).
+                        </li>
+                        <li>Duckett, J., 2011. HTML and CSS: Design and Build Websites,<i>John Willey&amp;Sons. Inc.
+                                Indianappolis.</i></li>
+                    </ul>
+                </section>
+
+            </article>
+
+            <!-- Sidebar area -->
+            <aside class="side-nav" aria-label="Page sections">
+                <h3>Core pages developed:</h3>
+                <ul class="top-level-ul">
+                    <li>Student 1</li>
+                    <ul>
+                        <li><a href="#home">Home page</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#content">Content</a></li>
+                    </ul>
+                    <li><a href="#challenge">Challenges and Lessons Learned</a></li>
+                    <li><a href="#compliance">Compliance</a></li>
+                    <li><a href="#group">Group Meetings and Individual Contribution Log</a></li>
+                    <li><a href="#ref">References</a></li>
+                </ul>
+            </aside>
+        </div>
+    </main>
+
+    <a href="#page-top" class="go-top" aria-label="Go to top of page">↑</a>
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="pageEditor_ST1.html">Page Editor: Saarujan</a>
+        <a href="validation_ST1.html">Validation</a>
+      </div>
+      <p class="footer-copy">Saarujan · OceanAct · SDG 14 · University of Westminster · 2025/26</p>
+    </div>
+  </footer>
 </body>
 
 </html>
