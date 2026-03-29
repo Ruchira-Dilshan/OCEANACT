@@ -15,10 +15,17 @@
         /* Team page styles */
         .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 320px));
+            grid-template-columns: repeat(4, 1fr);
             justify-content: center;
             gap: 1.5rem;
             margin: 1.5rem 0;
+        }
+
+        /* Allow wrapping on tablets and smaller screens */
+        @media (max-width: 992px) {
+            .team-grid {
+                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            }
         }
 
         /* Member block */
@@ -31,6 +38,7 @@
             box-shadow: var(--shadow);
             transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
             cursor: pointer;
+            text-align: center;
         }
 
         /* Hover: scale + border highlight */
@@ -96,8 +104,8 @@
         }
 
         .member-details ul {
-            list-style: disc;
-            padding-left: 1.2rem;
+            list-style: none;
+            padding: 0;
             margin-top: 0.3rem;
         }
 
@@ -199,6 +207,25 @@
                         <li>Created the feedback form with JS validation</li>
                         <li>Built the progressive profile page</li>
                         <li>Designed the SVG sitemap</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Member 4 -->
+            <div class="member-block" tabindex="0" role="listitem" aria-label="Team member: Student 4">
+                <div class="member-thumb" aria-hidden="true">
+                    <img src="images/Member.png" alt="Student 4" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="member-name-row">
+                    <h2>Student 4: No Name</h2>
+                    <span class="role-tag">Content &amp; No role</span>
+                </div>
+                <div class="member-details" aria-live="polite">
+                    <p><strong>Pages built:</strong> No Pages</p>
+                    <ul>
+                        <li>Nothing</li>
+                        <li>Nothing</li>
+                        <li>Nothing</li>
                     </ul>
                 </div>
             </div>

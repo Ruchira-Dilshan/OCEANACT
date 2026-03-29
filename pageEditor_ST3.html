@@ -6,25 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page Editor - HGO Dulwan (Student 3)</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="css/pageEditor_validator.css"> <!-- External CSS link -->
 
 </head>
 
 <body>
+    <div id="page-top"></div>
+
 
     <!-- Update the header and the footer to be consistent with the rest of the pages you implemented -->
 
-    <header id="top">
-        <h1>Protect Life Below Water</h1>
+    <header>
+        <div class="header-inner">
+            <a href="home.html" class="logo" aria-label="OceanAct Home">
+                <span class="logo-icon" aria-hidden="true">🌊</span>
+                <span class="logo-text">OceanAct</span>
+            </a>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="ais.html">Impact Simulator</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <section class="stud">
-        <h2>HGO Dulwan | Team: OceanAct | Student 3</h2>
+        <h2>Omika Gamage | Team: OceanAct | Student 3</h2>
+        <p style="text-align:center; color:white; font-weight:600; margin-top:5px;">Role: Content &amp; Full-Stack Developer</p>
     </section>
 
-    <div class="container">
+    <div class="content-layout">
         <!-- Main content area -->
-        <main>
+        <main class="content-article">
 
             <!-- Update those first three sections for the pages you were responsible to implement -->
 
@@ -418,6 +442,7 @@
                 <p>Provide links to resources you used following a consistent format (e.g., APA, MLA, or a simplified
                     style). For example:<br><br>
                 <ul class="ref">
+                    <li>Flaticon (2026) <i>User free icon</i>. Available at: <a href="https://www.flaticon.com/free-icon/user_18452191">https://www.flaticon.com/free-icon/user_18452191</a> (Last accessed: 29 Mar 2026).</li>
                     <li>Unsplash (2026) <i>Man playing with dog on beach</i>. Available at: <a href="https://unsplash.com/photos/man-in-blue-t-shirt-and-black-shorts-playing-with-black-short-coated-dog-on-beach-nmZhTkZik8g">https://unsplash.com/photos/man-in-blue-...</a> (Last accessed: 29 Mar 2026).</li>
                     <li>Unsplash (2026) <i>Underwater view of a coral reef</i>. Available at: <a href="https://unsplash.com/photos/an-underwater-view-of-a-coral-reef-with-lots-of-corals-IYfxbrVjxoA">https://unsplash.com/photos/an-underwate...</a> (Last accessed: 29 Mar 2026).</li>
                     <li>Unsplash (2026) <i>People watch kelp forest in large aquarium window</i>. Available at: <a href="https://unsplash.com/photos/people-watch-kelp-forest-in-large-aquarium-window-1ZgKuoK8Bv0">https://unsplash.com/photos/people-watch...</a> (Last accessed: 29 Mar 2026).</li>
@@ -426,11 +451,12 @@
                 </ul>
             </section>
 
-            <p class="top"><a href="#top">Go top</a></p>
+            <a href="#page-top" class="go-top" aria-label="Go to top of page">↑</a>
+
         </main>
 
         <!-- Sidebar area -->
-        <aside>
+        <aside class="side-nav">
             <h3>Core pages developed:</h3>
 
             <!-- Customize this to the role you undertook. Keep only the list items you were responsible to develop, delete the rest -->
@@ -454,7 +480,14 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 OceanAct Team. <a href="validation_ST3.html">View Validation Page</a></p>
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="pageEditor_ST3.html">Page Editor (Student 3)</a>
+                <a href="validation_ST3.html">Validation</a>
+                <a href="https://www.w3.org/WAI/" target="_blank" rel="noopener">Accessibility</a>
+            </div>
+            <p class="footer-copy">Student 3 · OceanAct · SDG 14 · University of Westminster · 2025/26</p>
+        </div>
     </footer>
 </body>
 
