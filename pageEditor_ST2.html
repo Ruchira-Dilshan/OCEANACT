@@ -2,402 +2,592 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Editor Student - provide your student name</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Editor - Ruchira | OceanAct</title>
 
-    <link rel="stylesheet" href="css/pageEditor_validator.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="css/pageEditor_validator.css">
 
+  <style>
+    .content-layout {
+      display: grid;
+      grid-template-columns: 1fr 260px;
+      gap: 2rem;
+      align-items: start;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .content-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .side-nav {
+        display: none;
+      }
+    }
+
+    .side-nav {
+      position: sticky;
+      top: 80px;
+      background: var(--card-bg, #ffffff);
+      border: 1px solid var(--border, #e0e0e0);
+      border-radius: 10px;
+      padding: 1.2rem;
+    }
+
+    .side-nav h3 {
+      color: var(--primary, #0077b6);
+      margin-bottom: 0.8rem;
+      font-size: 1.1rem;
+      border-bottom: 1px solid var(--border, #e0e0e0);
+      padding-bottom: 0.5rem;
+    }
+
+    .side-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .side-nav ul li a {
+      font-size: 0.9rem;
+      color: var(--muted, #666);
+      display: block;
+      padding: 0.25rem 0 0.25rem 0.5rem;
+      border-left: 3px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+      text-decoration: none;
+    }
+
+    .side-nav ul li a:hover {
+      color: var(--primary, #0077b6);
+      border-color: var(--primary, #0077b6);
+    }
+
+    .side-nav ul ul {
+      margin-left: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .content-article section {
+      margin-bottom: 2.5rem;
+    }
+
+    .content-article h1,
+    .content-article h2 {
+      color: var(--primary, #0077b6);
+      border-bottom: 2px solid var(--border, #e0e0e0);
+      padding-bottom: 0.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .content-article h3 {
+      font-size: 1.1rem;
+      color: #00b4d8;
+      margin-top: 1.5rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .content-article p {
+      margin-bottom: 1rem;
+    }
+
+    .go-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--primary, #0077b6);
+      color: #ffffff;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 44px;
+      font-size: 1.2rem;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0, 119, 182, 0.3);
+      z-index: 500;
+      transition: background 0.2s;
+    }
+
+    .go-top:hover {
+      background: var(--dark, #03045e);
+      color: #ffffff;
+    }
+
+    #page-top {
+      display: block;
+      position: relative;
+      top: -80px;
+    }
+
+    header {
+      font-family: var(--font-header, 'Space Grotesk', sans-serif);
+    }
+
+    h1 {
+      font-family: var(--font-header, 'Space Grotesk', sans-serif);
+      font-size: 2.5rem;
+      color: var(--primary, #0077b6);
+      margin-bottom: 0.4rem;
+    }
+
+    p,
+    ul,
+    li,
+    td,
+    th {
+      font-family: var(--font-body, 'Montserrat', sans-serif);
+      line-height: 1.6;
+    }
+
+    td {
+      padding: 8px;
+      border: 1px solid var(--border, #e0e0e0);
+    }
+
+    th {
+      padding: 8px;
+      border: 1px solid var(--border, #e0e0e0);
+      background-color: var(--bg-light, #f8f9fa);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .stud h1 {
+      text-align: center;
+      font-size: 2.2rem;
+    }
+
+    .stud p {
+      text-align: center;
+      font-size: 1.2rem;
+      color: var(--muted, #666666);
+    }
+  </style>
 </head>
 
 <body>
+  <span id="page-top"></span>
+  <header>
+    <div class="header-inner">
+      <a href="home.html" class="logo" aria-label="OceanAct Home"><span class="logo-icon"
+          aria-hidden="true">🌊</span><span class="logo-text">OceanAct</span></a>
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="ais.html">Impact Simulator</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="feedback.html">Feedback</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="sitemap.html">Sitemap</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <header id="top">
-        <h1>OCEANACT</h1>
-    </header>
-
-    <section class="stud">
-        <h2>Ruchira, OCEANACT, UX designer and JS developer</h2>
+  <main>
+    <section class="stud" style="margin: 2rem 0 3rem 0;">
+      <h1>Ruchira, OCEANACT</h1>
+      <p>UX designer and JS developer</p>
     </section>
 
-    <div class="container">
-        <!-- Main content area -->
-        <main>
+    <div class="content-layout">
+      <!-- Main content area -->
+      <article class="content-article">
+        <section id="splash">
+          <h2 id="home">Splash screen </h2>
+          <h3>Technical Description</h3>
+          <p>Action Impact Simulator (AIS) is a web application that can be used to play the role of environmental
+            advocate with SDG 14 on the client side and based on HTML5, CSS3, and plain JavaScript.
+            The interface has a CSS Grid-based design, displaying the so-called action cards, which users can
+            interact with. A card is associated with a JavaScript object with its IDs, a point value, and a
+            descriptive metadata.<br><br>
+            The primary section of the application is implemented with the help of a JavaScript Set, which
+            tracks user preferences. This results in Document Object Model (DOM) being dynamically
+            re-calculated to calculate a so-called impact score and update the background images dynamically
+            with the help of the src and the opacity properties as a means of providing visual feedback.
+            <br><br>Web
+            accessibility is also
+            a priority to the file through adding ARIA roles, screen reader live regions, and event listeners to
+            keyboard navigation (Enter/ Space keys).
+            This ensures that it can be used by everybody and they enjoy.
+          </p>
+
+          <h3>Accessibility</h3>
+          <p>
+            Action Impact Simulator (AIS) also focuses on the digital inclusion process and incorporates
+            multiple important
+            accessibility features to provide the users with various needs with a seamless experience.<br><br> A
+            technical implementation of the interface is based on semantic HTML and the ARIA (Accessible Rich
+            Internet Applications) attributes (like role=listitem, aria-live=polite) that enable screen readers
+            to notify the user about the changes in the impact score and level in real-time but without breaking
+            the flow. <br><br>To users without a mouse, the cards are given a tabindex of 0, and the cards are
+            fully
+            accessible, and custom JavaScript event handlers can be used to interact with the Enter or Space
+            keys. In addition to that, the application offers visible and readable feedback, with dynamic
+            background images having a descriptive alt text that makes it possible to see the fonts and labels
+            as highly contrasted,
+            making it visible that the mission of SDG 14 can be followed by any person and used.</p>
+
+          <h3>Link to the validation page</h3>
+          <p><a href="validation_ST2.html#splashVal">Click here to go to validation page – Splash Screen
+              section</a></p>
 
 
+          <h3>Link to the page</h3>
+          <p><a href="splash.html">Click here to go to splash screen </a></p>
+        </section>
 
-            <section id="splash">
-                <h2 id="home">Splash screen </h2>
-                <h3>Technical Description</h3>
-                <p>Action Impact Simulator (AIS) is a web application that can be used to play the role of environmental
-                    advocate with SDG 14 on the client side and based on HTML5, CSS3, and plain JavaScript.
-                    The interface has a CSS Grid-based design, displaying the so-called action cards, which users can
-                    interact with. A card is associated with a JavaScript object with its IDs, a point value, and a
-                    descriptive metadata.<br><br>
-                    The primary section of the application is implemented with the help of a JavaScript Set, which
-                    tracks user preferences. This results in Document Object Model (DOM) being dynamically
-                    re-calculated to calculate a so-called impact score and update the background images dynamically
-                    with the help of the src and the opacity properties as a means of providing visual feedback.
-                    <br><br>Web
-                    accessibility is also
-                    a priority to the file through adding ARIA roles, screen reader live regions, and event listeners to
-                    keyboard navigation (Enter/ Space keys).
-                    This ensures that it can be used by everybody and they enjoy.
-                </p>
+        <section>
+          <h2 id="ais">Action Impact Simulator</h2>
+          <h3>Technical Description</h3>
+          <p>
 
-                <h3>Accessibility</h3>
-                <p>
-                    Action Impact Simulator (AIS) also focuses on the digital inclusion process and incorporates
-                    multiple important
-                    accessibility features to provide the users with various needs with a seamless experience.<br><br> A
-                    technical implementation of the interface is based on semantic HTML and the ARIA (Accessible Rich
-                    Internet Applications) attributes (like role=listitem, aria-live=polite) that enable screen readers
-                    to notify the user about the changes in the impact score and level in real-time but without breaking
-                    the flow. <br><br>To users without a mouse, the cards are given a tabindex of 0, and the cards are
-                    fully
-                    accessible, and custom JavaScript event handlers can be used to interact with the Enter or Space
-                    keys. In addition to that, the application offers visible and readable feedback, with dynamic
-                    background images having a descriptive alt text that makes it possible to see the fonts and labels
-                    as highly contrasted,
-                    making it visible that the mission of SDG 14 can be followed by any person and used.</p>
+            The Action Impact Simulator (AIS) is a robust and client-side web application that is written in
+            HTML5, CSS3, and vanilla JavaScript
+            to gamify SDG 14 environmental advocacy. The interface is made up of a CSS Grid layout to display
+            interactive action cards,
+            which are programmatically created out of a JavaScript object of unique IDs, point values, and
+            descriptions. <br><br>
+            The business logic of
+            the application has a JavaScript Set to store user selections, which cause a real-time update to the
+            Document Object Model (DOM)
+            to compute a cumulative “impact score” by the use of point thresholds. Moreover, the page has a
+            dynamic background system with the
+            help of which the src and the property of the opacity give the images in order to replace each
+            other, namely, to the dull waves,
+            the colorful coral reef, in order to inform the user of their progress immediately.<br><br>The file
+            is
+            designed to be inclusive and therefore
+            includes web accessibility standards through the use of ARIA roles,
+            a tabindex to navigate the site with a keyboard, and aria live region to announce changes in the
+            score to screen readers.</p>
 
-                <h3>Link to the validation page</h3>
-                <p><a href="validation_ST2.html#splashVal">Click here to go to validation page – Splash Screen
-                        section</a></p>
+          <h3>Accessibility</h3>
+          <p>Action Impact Simulator (AIS) also focuses on the digital inclusion process and
+            incorporates multiple important accessibility features to provide the users with
+            various needs with a seamless experience.
+            <br><br>A technical implementation of the interface is based on semantic
+            HTML and the ARIA (Accessible Rich Internet Applications) attributes (like role=listitem,
+            aria-live=polite) that
+            enable screen readers to notify the user about the changes in the impact score and level in
+            real-time but without breaking the flow.
+            To users without a mouse, the cards are given a tabindex of 0, and the cards are fully accessible,
+            and custom JavaScript event handlers
+            can be used to interact with the Enter or Space keys.<br> <br> In addition to that, the application
+            offers visible and readable feedback, with dynamic
+            background images having a descriptive alt text that makes it possible to see the fonts and labels
+            as highly contrasted,
+            making it visible that the mission of SDG 14 can be followed by any person and used.
+          </p>
 
+          <h3>Link to the validation page</h3>
+          <p><a href="validation_ST2.html#aisVal">Click here to go to the validation page-Action Impact
+              Simulator</a>, </p>
 
-                <h3>Link to the page</h3>
-                <p><a href="splash.html">Click here to go to splash screen </a></p>
-            </section>
+          <h3>Link to the page</h3>
+          <p><a href="ais.html">Click here to go to the Action Impact Simulator page</a></p>
+        </section>
 
-            <section>
-                <h2 id="ais">Action Impact Simulator</h2>
-                <h3>Technical Description</h3>
-                <p>
+        <section>
+          <h2 id="content">Marine Biodiversity Page</h2>
+          <h3>Technical Description</h3>
+          <p>Marine Biodiversity content page is a complex, data-driven document that was created with the
+            emphasis
+            on the information architecture structure and responsive web design. Technically, the page has been
+            designed
+            using CSS Grid with a grid-template-column: 220px 1fr grid-template-column arrangement to construct
+            a two-column
+            desktop layout that would smoothly convert to a one-column stack in mobile devices through media
+            queries.<br> <br>
+            A position sticky side navigation menu will be implemented to improve the user experience by adding
+            a consistent,
+            clickable table of contents that allows one to jump quickly between sections focused on a specific
+            topic, such as
+            the Species and Threats.<br><br> Additionally the page incorporates more sophisticated visual
+            information elements
+            such as high-resolution extrinsic image resources and explanatory figure elements to offer a
+            scientific background.
+            The developer used CSS custom properties (variables) to a centralised colour and typography system,
+            ssibility-oriented HTML5 tags aria-label and semantic
+            article and section labels to make sure that the
+            information can be easily perceived and navigated by every user.</p>
 
-                    The Action Impact Simulator (AIS) is a robust and client-side web application that is written in
-                    HTML5, CSS3, and vanilla JavaScript
-                    to gamify SDG 14 environmental advocacy. The interface is made up of a CSS Grid layout to display
-                    interactive action cards,
-                    which are programmatically created out of a JavaScript object of unique IDs, point values, and
-                    descriptions. <br><br>
-                    The business logic of
-                    the application has a JavaScript Set to store user selections, which cause a real-time update to the
-                    Document Object Model (DOM)
-                    to compute a cumulative “impact score” by the use of point thresholds. Moreover, the page has a
-                    dynamic background system with the
-                    help of which the src and the property of the opacity give the images in order to replace each
-                    other, namely, to the dull waves,
-                    the colorful coral reef, in order to inform the user of their progress immediately.<br><br>The file
-                    is
-                    designed to be inclusive and therefore
-                    includes web accessibility standards through the use of ARIA roles,
-                    a tabindex to navigate the site with a keyboard, and aria live region to announce changes in the
-                    score to screen readers.</p>
+          <h3>Accessibility</h3>
+          <p>The Marine Biodiversity content page is a complex, data-driven document, which was designed in
+            accordance with the focus on the information architecture design and responsive web design. <br><br>
+            The page is technically created, with the grid-template-column: 220px 1fr grid-template-column grid
+            format to
+            create a two-column desktop layout that would change into a one-column stack in mobile devices using
+            media queries.<br><br>
+            The position sticky side navigation menu shall be adopted to enhance the user experience by means of
+            the addition of a
+            regular, clickable table of contents to enable her to jump to the section devoted to a particular
+            topic, like the
+            Species and Threats. The page also includes more advanced elements of visual information, like
+            high-resolution
+            extrinsic image materials and explanatory figure elements, to provide a scientific background.
+            <br><br>CSS custom properties
+            (variables) to the developer were used to centralize the colour and typography system based on the
+            accessibility-oriented
+            HTML5 tags aria-label and semantic article and section labels to ensure that any user can find and
+            follow the information very easily.
 
-                <h3>Accessibility</h3>
-                <p>Action Impact Simulator (AIS) also focuses on the digital inclusion process and
-                    incorporates multiple important accessibility features to provide the users with
-                    various needs with a seamless experience.
-                    <br><br>A technical implementation of the interface is based on semantic
-                    HTML and the ARIA (Accessible Rich Internet Applications) attributes (like role=listitem,
-                    aria-live=polite) that
-                    enable screen readers to notify the user about the changes in the impact score and level in
-                    real-time but without breaking the flow.
-                    To users without a mouse, the cards are given a tabindex of 0, and the cards are fully accessible,
-                    and custom JavaScript event handlers
-                    can be used to interact with the Enter or Space keys.<br> <br> In addition to that, the application
-                    offers visible and readable feedback, with dynamic
-                    background images having a descriptive alt text that makes it possible to see the fonts and labels
-                    as highly contrasted,
-                    making it visible that the mission of SDG 14 can be followed by any person and used.
-                </p>
+          </p>
 
-                <h3>Link to the validation page</h3>
-                <p><a href="validation_ST2.html#aisVal">Click here to go to the validation page-Action Impact
-                        Simulator</a>, </p>
+          <h3>Link to the validation page</h3>
 
-                <h3>Link to the page</h3>
-                <p><a href="ais.html">Click here to go to the Action Impact Simulator page</a></p>
-            </section>
+          <p><a href="validation_ST2.html#content_st2Val">Click here to go to the validation page-Content ST2</a>
+          </p>
 
-            <section>
-                <h2 id="content">Marine Biodiversity Page</h2>
-                <h3>Technical Description</h3>
-                <p>Marine Biodiversity content page is a complex, data-driven document that was created with the
-                    emphasis
-                    on the information architecture structure and responsive web design. Technically, the page has been
-                    designed
-                    using CSS Grid with a grid-template-column: 220px 1fr grid-template-column arrangement to construct
-                    a two-column
-                    desktop layout that would smoothly convert to a one-column stack in mobile devices through media
-                    queries.<br> <br>
-                    A position sticky side navigation menu will be implemented to improve the user experience by adding
-                    a consistent,
-                    clickable table of contents that allows one to jump quickly between sections focused on a specific
-                    topic, such as
-                    the Species and Threats.<br><br> Additionally the page incorporates more sophisticated visual
-                    information elements
-                    such as high-resolution extrinsic image resources and explanatory figure elements to offer a
-                    scientific background.
-                    The developer used CSS custom properties (variables) to a centralised colour and typography system,
-                    ssibility-oriented HTML5 tags aria-label and semantic
-                    article and section labels to make sure that the
-                    information can be easily perceived and navigated by every user.</p>
+          <h3>Link to the page</h3>
+          <p><a href="content_ST2.html">Click here to go to the content page-Content ST2</a></p>
+        </section>
 
-                <h3>Accessibility</h3>
-                <p>The Marine Biodiversity content page is a complex, data-driven document, which was designed in
-                    accordance with the focus on the information architecture design and responsive web design. <br><br>
-                    The page is technically created, with the grid-template-column: 220px 1fr grid-template-column grid
-                    format to
-                    create a two-column desktop layout that would change into a one-column stack in mobile devices using
-                    media queries.<br><br>
-                    The position sticky side navigation menu shall be adopted to enhance the user experience by means of
-                    the addition of a
-                    regular, clickable table of contents to enable her to jump to the section devoted to a particular
-                    topic, like the
-                    Species and Threats. The page also includes more advanced elements of visual information, like
-                    high-resolution
-                    extrinsic image materials and explanatory figure elements, to provide a scientific background.
-                    <br><br>CSS custom properties
-                    (variables) to the developer were used to centralize the colour and typography system based on the
-                    accessibility-oriented
-                    HTML5 tags aria-label and semantic article and section labels to ensure that any user can find and
-                    follow the information very easily.
+        <section>
+          <h2 id="challenge"> Challenges and Lessons Learned</h2>
+          <p>The main technical difficulty on the Marine Biodiversity and Action Impact Simulator pages was to
+            transform complicated ecological information to an easy user interface.
+            In the case of the biodiversity page, the challenge was to use a CSS Grid-based system that ensured
+            there was a functional,
+            sticky side-navigation menu and that still had to handle high-resolution scientific images,
+            depending on the breakpoint.
+            The hurdle in the simulator moved to the JavaScript logic; the correct handling of the events to
+            ensure that the Set object
+            properly followed the choices made by unique users to refresh the "Impact Score" in real-time
+            necessitated a strict event management
+            to avoid the calculation of a point twice.
+            <br><br>
+            One of the biggest development lessons was the need to have a solid accessibility instead of seeing
+            it as a finishing touch.
+            Incorporating ARIA roles, tabindex to make work with the keyboard, and aria-live regions to update
+            the scores dynamically demonstrated
+            that inclusive design helps in a greater degree to improve the UX of all users. The semantic HTML5
+            elements such as article and section
+            developed the document structure to be inherently more navigable to assistive technologies, which
+            once again supported the objective of
+            the project to raise awareness among the largest audience possible regarding SDG 14.
+            <br><br>
+            The process of development also emphasized the influence of the visual feedback in influencing the
+            environmental advocacy.
+            Changes within the simulator, such as the background moving past basic waves to a living coral reef,
+            as the user gains the score,
+            showed that gamification can cause abstract objectives, such as carbon sequestration, to become more
+            concrete. Moreover, the application
+            of CSS custom properties also enabled the creation of a centralized system of design, and this has
+            taught the importance of having
+            maintainable code to work with several content-heavy pages that need a uniform visual
+            representation.
+          </p>
+        </section>
 
-                </p>
+        <section>
+          <h2 id="compliance"> Compliance</h2>
+          <p>The pages designed in the project OceanAct- Marine biodiversity, Action Impact Simulator and Splash
+            Screen meet the acceptance use Policy (AUP) and Security Policy in that all the content and
+            technical implementations support the network mission which is the education and research. According
+            to Janet policies, users are required to make sure that their hosted content is legal, not
+            commercial (in a personal/student perspective), and does not impair the integrity of the network. I
+            ensure that these are strictly followed on my pages with the specific SDG 14 (Life Below Water)
+            which has evidence-based educational content and has no outlawed content like unsolicited
+            advertising, spam, or offensive text. Citing reliable sources such as the IUCN RedList and WWF, the
+            pages also complete the Janet requirement of the accuracy of information as well as its suitability
+            to the needs of an academic community.<br><br>
 
-                <h3>Link to the validation page</h3>
+            Security and technical compliance wise the pages are to be safe to others as stipulated by the Janet
+            Security Policy. The Action Impact Simulator is written in pure, client-side vanilla JavaScript
+            without any outside libraries or invasive scripts that may trigger the proactive vulnerability
+            scanning of Jisc. This will avoid exposing the greater institutional network to the threat of
+            malware or security vulnerabilities being introduced through this. Moreover, semantic HTML5 and ARIA
+            roles are used to meet the 2026-compliant level of digital accessibility (as in WCAG 2.1 Level AA)
+            which is slowly becoming a regulatory requirement to any publicly-served academic content on a UK
+            academic network.<br><br>
 
-                <p><a href="validation_ST2.html#content_st2Val">Click here to go to the validation page-Content ST2</a>
-                </p>
-
-                <h3>Link to the page</h3>
-                <p><a href="content_ST2.html">Click here to go to the content page-Content ST2</a></p>
-            </section>
-
-            <section>
-                <h2 id="challenge"> Challenges and Lessons Learned</h2>
-                <p>The main technical difficulty on the Marine Biodiversity and Action Impact Simulator pages was to
-                    transform complicated ecological information to an easy user interface.
-                    In the case of the biodiversity page, the challenge was to use a CSS Grid-based system that ensured
-                    there was a functional,
-                    sticky side-navigation menu and that still had to handle high-resolution scientific images,
-                    depending on the breakpoint.
-                    The hurdle in the simulator moved to the JavaScript logic; the correct handling of the events to
-                    ensure that the Set object
-                    properly followed the choices made by unique users to refresh the "Impact Score" in real-time
-                    necessitated a strict event management
-                    to avoid the calculation of a point twice.
-                    <br><br>
-                    One of the biggest development lessons was the need to have a solid accessibility instead of seeing
-                    it as a finishing touch.
-                    Incorporating ARIA roles, tabindex to make work with the keyboard, and aria-live regions to update
-                    the scores dynamically demonstrated
-                    that inclusive design helps in a greater degree to improve the UX of all users. The semantic HTML5
-                    elements such as article and section
-                    developed the document structure to be inherently more navigable to assistive technologies, which
-                    once again supported the objective of
-                    the project to raise awareness among the largest audience possible regarding SDG 14.
-                    <br><br>
-                    The process of development also emphasized the influence of the visual feedback in influencing the
-                    environmental advocacy.
-                    Changes within the simulator, such as the background moving past basic waves to a living coral reef,
-                    as the user gains the score,
-                    showed that gamification can cause abstract objectives, such as carbon sequestration, to become more
-                    concrete. Moreover, the application
-                    of CSS custom properties also enabled the creation of a centralized system of design, and this has
-                    taught the importance of having
-                    maintainable code to work with several content-heavy pages that need a uniform visual
-                    representation.
-                </p>
-            </section>
-
-            <section>
-                <h2 id="compliance"> Compliance</h2>
-                <p>The pages designed in the project OceanAct- Marine biodiversity, Action Impact Simulator and Splash
-                    Screen meet the acceptance use Policy (AUP) and Security Policy in that all the content and
-                    technical implementations support the network mission which is the education and research. According
-                    to Janet policies, users are required to make sure that their hosted content is legal, not
-                    commercial (in a personal/student perspective), and does not impair the integrity of the network. I
-                    ensure that these are strictly followed on my pages with the specific SDG 14 (Life Below Water)
-                    which has evidence-based educational content and has no outlawed content like unsolicited
-                    advertising, spam, or offensive text. Citing reliable sources such as the IUCN RedList and WWF, the
-                    pages also complete the Janet requirement of the accuracy of information as well as its suitability
-                    to the needs of an academic community.<br><br>
-
-                    Security and technical compliance wise the pages are to be safe to others as stipulated by the Janet
-                    Security Policy. The Action Impact Simulator is written in pure, client-side vanilla JavaScript
-                    without any outside libraries or invasive scripts that may trigger the proactive vulnerability
-                    scanning of Jisc. This will avoid exposing the greater institutional network to the threat of
-                    malware or security vulnerabilities being introduced through this. Moreover, semantic HTML5 and ARIA
-                    roles are used to meet the 2026-compliant level of digital accessibility (as in WCAG 2.1 Level AA)
-                    which is slowly becoming a regulatory requirement to any publicly-served academic content on a UK
-                    academic network.<br><br>
-
-                    Lastly, the pages are also honest to the Janet Connection Policy, in that they are hosted within the
-                    accepted institutional structure of student coursework. It does not seek to use the infrastructure
-                    connected to Janet in private business or does not seek to circumvent the network security measures
-                    (e.g., by transmitting data unauthorised). Accountability and transparency in the pages are ensured
-                    through the addition of a Page Editor link and validation credentials to the footer, thus enabling
-                    the network administrators to establish the identity of the content creator, which is one of the
-                    elements of the "appropriate technical and operational arrangements" that organizations should be
-                    able to demonstrate to Jisc.
-                    <br><br>
-                    <a href="https://intranet.ecs.westminster.ac.uk/modules/4COSC011W/compliance.html"
-                        target="_blank">See the lecture notes for more details on compliance.</a>
-                </p>
+            Lastly, the pages are also honest to the Janet Connection Policy, in that they are hosted within the
+            accepted institutional structure of student coursework. It does not seek to use the infrastructure
+            connected to Janet in private business or does not seek to circumvent the network security measures
+            (e.g., by transmitting data unauthorised). Accountability and transparency in the pages are ensured
+            through the addition of a Page Editor link and validation credentials to the footer, thus enabling
+            the network administrators to establish the identity of the content creator, which is one of the
+            elements of the "appropriate technical and operational arrangements" that organizations should be
+            able to demonstrate to Jisc.
+            <br><br>
+            <a href="https://intranet.ecs.westminster.ac.uk/modules/4COSC011W/compliance.html" target="_blank">See the
+              lecture notes for more details on compliance.</a>
+          </p>
 
 
-            </section>
+        </section>
 
-            <section>
-                <h2 id="compliance"> Group Meetings and Individual Contribution Log</h2>
-                <p>Include a Group Meetings and Contribution Log that documents your engagement with group work.
-                </p>
-                Requirements:
-                <ul>
-                    <li>A minimum of six (6) group meetings must be recorded.</li>
-                    <li>Each student must provide their own account of the meetings.</li>
-                    <li>The log must focus on individual contribution, not just group activity.</li>
-                </ul>
-                <p>Feel free to follow the example table structure below:</p>
+        <section>
+          <h2 id="compliance"> Group Meetings and Individual Contribution Log</h2>
+          <p>Include a Group Meetings and Contribution Log that documents your engagement with group work.
+          </p>
+          Requirements:
+          <ul>
+            <li>A minimum of six (6) group meetings must be recorded.</li>
+            <li>Each student must provide their own account of the meetings.</li>
+            <li>The log must focus on individual contribution, not just group activity.</li>
+          </ul>
+          <p>Feel free to follow the example table structure below:</p>
 
-                <table>
+          <table>
 
-                    <thead>
-                        <tr>
-                            <th colspan="6">Group Meetings and Contribution Log</th>
-                        </tr>
-                        <tr>
-                            <th>Meeting</th>
-                            <th>Date &amp; Time</th>
-                            <th>Format</th>
-                            <th>Objective</th>
-                            <th>Attended</th>
-                            <th>Your Individual Contribution</th>
-                        </tr>
-                    </thead>
+            <thead>
+              <tr>
+                <th colspan="6">Group Meetings and Contribution Log</th>
+              </tr>
+              <tr>
+                <th>Meeting</th>
+                <th>Date &amp; Time</th>
+                <th>Format</th>
+                <th>Objective</th>
+                <th>Attended</th>
+                <th>Your Individual Contribution</th>
+              </tr>
+            </thead>
 
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>3 Feb 2026</td>
-                            <td>Face-to-face</td>
-                            <td>Agree SDG and assign roles</td>
-                            <td>Yes</td>
-                            <td>I agreed to take responsibility for the Home Page and template.</td>
-                        </tr>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>3 Feb 2026</td>
+                <td>Face-to-face</td>
+                <td>Agree SDG and assign roles</td>
+                <td>Yes</td>
+                <td>I agreed to take responsibility for the Home Page and template.</td>
+              </tr>
 
-                        <tr>
-                            <td>2</td>
-                            <td>17 Feb 2026</td>
-                            <td>Online</td>
-                            <td>Review Home Page design</td>
-                            <td>Yes</td>
-                            <td>I suggested the colour palette and card-based layout.</td>
-                        </tr>
+              <tr>
+                <td>2</td>
+                <td>17 Feb 2026</td>
+                <td>Online</td>
+                <td>Review Home Page design</td>
+                <td>Yes</td>
+                <td>I suggested the colour palette and card-based layout.</td>
+              </tr>
 
-                        <tr>
-                            <td>3</td>
-                            <td>03 Mar 2026</td>
-                            <td>Hybrid</td>
-                            <td>Progress review</td>
-                            <td>No</td>
-                            <td>I reviewed meeting notes and followed up with tasks.</td>
-                        </tr>
+              <tr>
+                <td>3</td>
+                <td>03 Mar 2026</td>
+                <td>Hybrid</td>
+                <td>Progress review</td>
+                <td>No</td>
+                <td>I reviewed meeting notes and followed up with tasks.</td>
+              </tr>
 
-                        <tr>
-                            <td>4</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                        </tr>
+              <tr>
+                <td>4</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+              </tr>
 
-                        <tr>
-                            <td>5</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                        </tr>
+              <tr>
+                <td>5</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+              </tr>
 
-                        <tr>
-                            <td>6</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                        </tr>
+              <tr>
+                <td>6</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+              </tr>
 
-                    </tbody>
+            </tbody>
 
-                </table>
+          </table>
 
-            </section>
+        </section>
 
-            <section>
-                <h2 id="ref">References</h2>
-                <p>Provide links to resources you used following a consistent format (e.g., APA, MLA, or a
-                    simplified
-                    style). For example:<br><br>
-                <ul class="ref">
-                    <li>iStock (2025) <i>iStock.</i> Available at: <a href="#">https://www.istockphoto.com/</a>
-                        (Last
-                        accessed: 11 Feb 2025).</li>
-                    <li>Duckett, J., 2011. HTML and CSS: Design and Build Websites,<i>John Willey&Sons. Inc.
-                            Indianappolis.</i></li>
-                </ul>
-            </section>
+        <section>
+          <h2 id="ref">References</h2>
+          <p>Provide links to resources you used following a consistent format (e.g., APA, MLA, or a
+            simplified
+            style). For example:<br><br>
+          <ul class="ref">
+            <li>iStock (2025) <i>iStock.</i> Available at: <a href="#">https://www.istockphoto.com/</a>
+              (Last
+              accessed: 11 Feb 2025).</li>
+            <li>Duckett, J., 2011. HTML and CSS: Design and Build Websites,<i>John Willey&Sons. Inc.
+                Indianappolis.</i></li>
+          </ul>
+        </section>
 
-            <p class="top"><a href="#top">Go top</a></p>
-        </main>
+      </article>
 
-        <!-- Sidebar area -->
-        <aside>
-            <h3>Core pages developed:</h3>
+      <!-- Sidebar area -->
+      <aside class="side-nav" aria-label="Page sections">
+        <h3>Core pages developed:</h3>
 
-            <!-- Customize this to the role you undertook. Keep only the list items you were responsible to develop, delete the rest -->
-            <ul class="top-level-ul">
-                <!-- Keep only the list items you were responsible to develop, delete the rest and update the links to the corresponding markers -->
-                <li>Student 1</li>
-                <ul>
-                    <li><a href="home.html">Home page </a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="content_ST1.html">Content</a></li>
-                    <li><a href="style.css">style.css</a></li>
-                </ul>
-                <li>Student 2</li>
-                <ul>
-                    <li><a href="splash.html">Splash Screen</a></li>
-                    <li><a href="ais.html">Action Impact Simulator</a></li>
-                    <li><a href="content_ST2.html">Content</a></li>
+        <!-- Customize this to the role you undertook. Keep only the list items you were responsible to develop, delete the rest -->
+        <ul class="top-level-ul">
+          <!-- Keep only the list items you were responsible to develop, delete the rest and update the links to the corresponding markers -->
+          <li>Student 1</li>
+          <ul>
+            <li><a href="home.html">Home page </a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="content_ST1.html">Content</a></li>
+            <li><a href="style.css">style.css</a></li>
+          </ul>
+          <li>Student 2</li>
+          <ul>
+            <li><a href="splash.html">Splash Screen</a></li>
+            <li><a href="ais.html">Action Impact Simulator</a></li>
+            <li><a href="content_ST2.html">Content</a></li>
 
-                </ul>
+          </ul>
 
-                <li>Student 3</li>
-                <ul>
-                    <li><a href="feedback.html">Feedback</a> </li>
-                    <li><a href="team.html">Team</a></li>
-                    <li><a href="content_ST3.html">Content</a></li>
-                    <li><a href="sitemap.html">Sitemap</a></li>
-                </ul>
+          <li>Student 3</li>
+          <ul>
+            <li><a href="feedback.html">Feedback</a> </li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="content_ST3.html">Content</a></li>
+            <li><a href="sitemap.html">Sitemap</a></li>
+          </ul>
 
-                <li><a href="#challenge">Challenges and Lessons Learned</a></li>
-                <li><a href="#compliance">Compliance</a></li>
-                <li><a href="#group">Group Meetings and Individual Contribution Log</a></li>
-                <li><a href="#ref">References</a></li>
-            </ul>
-        </aside>
+          <li><a href="#challenge">Challenges and Lessons Learned</a></li>
+          <li><a href="#compliance">Compliance</a></li>
+          <li><a href="#group">Group Meetings and Individual Contribution Log</a></li>
+          <li><a href="#ref">References</a></li>
+        </ul>
+      </aside>
     </div>
+  </main>
 
-    <footer>
-        <p>Replace this footer with your teams' website footer</p>
-    </footer>
+  <a href="#page-top" class="go-top" aria-label="Go to top of page">↑</a>
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="pageEditor_ST2.html">Page Editor: Ruchira</a>
+        <a href="validation_ST2.html">Validation</a>
+      </div>
+      <p class="footer-copy">Ruchira · OceanAct · SDG 14 · University of Westminster · 2025/26</p>
+    </div>
+  </footer>
 </body>
 
 </html>
