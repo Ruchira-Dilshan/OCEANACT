@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validator Page - HGO Dulwan (Student 3)</title>
+
+    <link rel="stylesheet" href="css/pageEditor_validator.css"> <!-- External CSS link -->
+
+</head>
+
+<body>
+
+    <!-- Update the header and the footer to be consistent with the rest of the pages you implemented -->
+
+    <header id="top">
+        <h1>Protect Life Below Water</h1>
+    </header>
+
+    <section class="stud">
+        <h2>Hiyare Gamage Omika Dulwan | Team: OceanAct | Student 3</h2>
+    </section>
+
+    <div class="container">
+        <!-- Main content area -->
+        <main>
+
+            <!-- Update the content of the following sections with the information that corresponds to the pages you implemented  -->
+
+            <section>
+                <h2 id="feedbackVal">Feedback Page validation report</h2>
+                <p>The first warning during the validation was that there was a duplicate id and a missing alt tag on an
+                    ornamental icon. These I worked out by making IDs unique and adding descriptive alt text. This
+                    strengthened the need to use unique identifiers in CSS styling as well as accessibility.</p>
+                <img src="images/feedbackval.png" alt="Feedback page validation report">
+
+                <h3>Back to Page Editor page</h3>
+                <p><a href="pageEditor_ST3.html#feedback">Link back to the Feedback section of the Page Editor.</a></p>
+            </section>
+
+            <section>
+                <h2 id="teamVal">Team Page validation report</h2>
+                <p>Several unclosed <code>div</code> tags were identified during the W3C check. Once fixed, the page
+                    passed
+                    with no errors. I learned that grid-based card layouts can easily become nested incorrectly, so
+                    frequent validation is essential to maintain a clean DOM.</p>
+                <img src="images/teamval.png" alt="Team page validation report">
+
+                <h3>Back to Page Editor page</h3>
+                <p><a href="pageEditor_ST3.html#team">Link back to the Team section of the Page Editor.</a></p>
+            </section>
+
+            <section>
+                <h2 id="contentVal">Content Page validation report</h2>
+                <p>The validator proposed the use of the section elements with correct hierarchy of heading. I adjusted
+                    the levels of the headings in order to create a logical hierarchy (H1 > H2 > H3). I understood the
+                    direct impact of the valid heading structure on the navigation of the user of a screen reader.</p>
+                <img src="images/contentst3val.png" alt="Content page validation report">
+
+                <h3>Back to Page Editor page</h3>
+                <p><a href="pageEditor_ST3.html#content">Link back to the Content section of the Page Editor.</a></p>
+            </section>
+
+            <section>
+                <h2 id="profileVal">Profile Page validation report</h2>
+                <p>I had also received a warning about a lack of type attribute on a button and an orphaned label. Once
+                    type=button was added and the label correctly matched the input ID the page was all compliant. This
+                    made me learn that the form validity begins with strict HTML construction.</p>
+                <img src="images/profileval.png" alt="Profile page validation report">
+
+                <h3>Back to Page Editor page</h3>
+                <p><a href="pageEditor_ST3.html#userProfile">Link back to the User Profile section of the Page
+                        Editor.</a></p>
+            </section>
+
+            <section>
+                <h2 id="sitemapVal">Sitemap Page validation report</h2>
+                <p>The main issue was to make the SVG sitemap available. The title tags within the SVG nodes have been
+                    added by the validator. The process helped me to realize that the SVGs have the inner tags requiring
+                    a particular set of tags to be interpreted by the assistive devices such as the screen reader.</p>
+                <img src="images/sitemapval.png" alt="Sitemap page validation report">
+
+                <h3>Back to Page Editor page</h3>
+                <p><a href="pageEditor_ST3.html#sitemap">Link back to the Sitemap section of the Page Editor.</a></p>
+            </section>
+
+
+
+            <p class="top"><a href="#top">Go top</a></p>
+        </main>
+
+        <!-- Sidebar area -->
+        <aside>
+            <h3>Core pages developed:</h3>
+
+            <!-- Customize this to the role you undertook. Keep only the list items you were responsible to develop, delete the rest -->
+            <ul class="top-level-ul">
+                <!-- Keep only the list items you were responsible to develop, delete the rest and update the links to the corresponding markers -->
+
+                <li>Student 3
+                    <ul>
+                        <li><a href="#feedbackVal">Feedback</a></li>
+                        <li><a href="#teamVal">Team</a></li>
+                        <li><a href="#contentVal">Content</a></li>
+                        <li><a href="#profileVal">User Profile</a></li>
+                        <li><a href="#sitemapVal">Sitemap</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </aside>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 OceanAct Team. <a href="pageEditor_ST3.html">Back to Page Editor</a></p>
+    </footer>
+</body>
+
+</html>

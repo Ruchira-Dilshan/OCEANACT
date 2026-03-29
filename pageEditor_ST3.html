@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Editor - HGO Dulwan (Student 3)</title>
+
+    <link rel="stylesheet" href="css/pageEditor_validator.css"> <!-- External CSS link -->
+
+</head>
+
+<body>
+
+    <!-- Update the header and the footer to be consistent with the rest of the pages you implemented -->
+
+    <header id="top">
+        <h1>Protect Life Below Water</h1>
+    </header>
+
+    <section class="stud">
+        <h2>HGO Dulwan | Team: OceanAct | Student 3</h2>
+    </section>
+
+    <div class="container">
+        <!-- Main content area -->
+        <main>
+
+            <!-- Update those first three sections for the pages you were responsible to implement -->
+
+            <section>
+                <h2 id="feedback">Feedback Page </h2>
+                <h3>Technical Description</h3>
+                <p>The Feedback page is constructed with the help of primary container that is subdivided into three
+                    separate parts: programme directory, a grid of reviews, and a form of feedback submission. The
+                    programme directory has a CSS Grid (.prog-grid), responsive settings of auto-fill and minmax(240px,
+                    1fr) and placed in a scrollable container (.prog-scroll), with max-height: 420px and overflow-y:
+                    auto. This makes sure that with the addition of more programmes the overall page height can be
+                    maintained under control. Feedback form consists of semantic fieldset and legend tags to categorize
+                    personal information and feedback content, and datalist to offer native, accessible search
+                    recommendations to the field of interests.</p>
+
+                <h3>Accessibility</h3>
+                <p>The availability and response are covered with powerful JavaScript functionality. An immediate visual
+                    feedback to show the amount of characters typed into a message textarea uses a live character
+                    counter, which was executed using an input event listener which modifies the text colour as the user
+                    nears the 300-character limit. Form submission validation is done via regular expressions to
+                    validate email format and minimum length of message and show or hide certain error messages
+                    (.error-msg) that are coupled with input highlighting (.input-error). When the form is successfully
+                    validated, the form is replaced with a confirmation message having role = alert and this will
+                    immediately notify the users of the screen reader that their form has been submitted.
+                </p>
+
+                <h3>Link to the validation page</h3>
+                <!-- Update the path to link the Page Editor with the splash page -->
+                <p><a href="validation_ST3.html#feedbackVal">Link to the validation page</a>. Use the marker to
+                    jump to the corresponding section of the validation page.</p>
+                <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
+
+                <h3>Link to the page</h3>
+                <p><a href="feedback.html">Include a link to the actual page you describe.</a></p>
+            </section>
+
+            <section>
+                <h2 id="team">Team Page</h2>
+                <h3>Technical Description</h3>
+                <p>The Team page is built on the basis of the CSS Grid created with grid-template-columns:
+                    repeat(auto-fit, minmax(240px, 320px)) and justify-content: center. This causes the cards to react
+                    to the screen width in a natural manner without the need to provide explicit media queries of
+                    columns wrapping automatically as the space gets smaller.</p>
+
+                <p> Every member of the team is identified by "a .member-block div" in the form of an interactive card.
+                    Position: relative, border-radius, overflow: hidden,
+                    and a CSS transition on transform, box-shadow, and border-color are utilized in the card to create
+                    the effect of a lift-and-highlight on hover (translateY(-6px)).</p>
+
+                <p>Member profile images are contained in .member-thumb - a fixed height flex box (height: 200px) with
+                    a gradient fallback background. Object-fit: cover is in images to occupy the thumbnail without
+                    distortion of the image it represents, irrespective of the aspect ratio of the source image.</p>
+
+                <p>By default, the expandable bio section (.member-details) is not revealed by max-height: 0;
+                    overflow:
+                    hidden and only shown on:hover and :focus-within by animating max-height to 200px. This is a
+                    CSS-based accordion system that does not need any JavaScript yet has a good, animated opening of the
+                    contents.</p>
+
+                <h3>Accessibility</h3>
+                <p>List lost semantics are replaced by role of .team-grid and roleitem of the cards, and the default
+                    list role of a div element is lost, which is why aria-label of each card provides a descriptive name
+                    read out by screen readers (e.g. Team member: Student 1).</p>
+
+                <p>member-thumb aria-hiding=true will not make decorative images and spaces of gradient fill the screen
+                    reader view. The use of aria-live=polite in the element of the member-details demonstrates to the
+                    assistive technologies that the content has dynamically changed when one card on the screen is in
+                    focus or hovered and, thus, the information became visible, and it is notified to the users of the
+                    screen readers.</p>
+
+                <p>The tags with rel=preconnect are to preconnect with Google font servers, which decreases the time
+                    spent on loading the fonts and eliminates the flash of unstyled text in slower connections. </p>
+
+                <h3>Link to the validation page</h3>
+                <!-- Update the path to link the Page Editor with the splash page -->
+                <p><a href="validation_ST3.html#teamVal">Link to the validation page</a>. Use the marker
+                    to jump to the corresponding section of the validation page.</p>
+                <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
+
+
+                <h3>Link to the page</h3>
+                <p><a href="team.html">Include a link to the actual page you describe.</a></p>
+            </section>
+
+            <section>
+                <h2 id="content">Content Page</h2>
+                <h3>Technical Description</h3>
+                <p>The CSS Layout of the Content page is based on the two-column grid (.content-layout) configured with
+                    grid-template-columns: 220px 1fr wherein the former column contains a sticky sidebar navigation and
+                    the latter column contains the main article. The align-items: start that is selected means that both
+                    columns are positioned at the same height as opposed to being equal without extending. One of the
+                    breakpoints, a breakpoint of 720 pixels, takes the grid to a single column and covers the sidebar on
+                    smaller screens to keep the page clean on the mobile devices.</p>
+
+                <p>The sidebar (.side-nav) has position: sticky and top: 80px so that it is visible as the article is
+                    scrolled by the user. Both navigational links are defined as border-left: 3px solid transparent and
+                    have a transition on the color and border-color, which causes a slight highlight of the left border
+                    to show on hover and allows the user to visually know which part the link will take them to.</p>
+
+                <p>The article is mainly contained under a semantic tag of article and breaks down into section
+                    elements with unique id and which are linked to by side bar anchor. Border-bottom: 2px solid
+                    var(--border) has been used in each of the h2 headings to visually divide sections. The images
+                    within the content are represented by the class content-img with the following properties:
+                    object-fit: cover, max-height: 280px, and border-radius: 10px in order to be represented in the
+                    case of non-distortion, irrespective of the size of the original image.</p>
+
+                <p>To ensure that it is always available and does not discontinue the flow of reading, there is a
+                    permanently placed button at the bottom: 2rem; right: 2rem with the help of position: fixed. It is
+                    connected to a hidden anchor which is called page-top that is located at the very top of the body
+                    with a top: -80px offset in order to consider the height of the sticky header.</p>
+
+                <h3>Accessibility</h3>
+                <p>The aria-label=Page sections has been added on the aside element on the sidebar to ensure that the
+                    screen readers identify it as a landmark on the navigation which is not bound with the main
+                    navigation. The primary nav within the header also possesses an aria-label of its own, which is
+                    "Main navigation" to ensure that there is a differentiation that there are two different areas of
+                    navigation.</p>
+
+                <p>The "back to top" link does contain an aria-label of Go to top of page as the visible textual
+                    information is merely an arrow ( ↑). This is nonsense with no label to a screen reader. The content
+                    includes any images and they have descriptive alt text which explains what the image is all about
+                    and how it relates to the content in that section and thus a user of a screen reader will have the
+                    same level of understanding as a person who is viewing the images.</p>
+
+                <p>Finally, Google Fonts includes the rel=preconnect attribute of the
+                    <link> elements to preload connections. This makes sure that font load latency is minimized to the
+                    lowest possible and there is no flash of un-styled text displayed.
+                </p>
+
+                <h3>Link to the validation page</h3>
+                <!-- Update the path to link the Page Editor with the splash page -->
+                <p><a href="validation_ST3.html#contentVal">Include a link to the validation page</a>, use the marker to
+                    jump to the corresponding section of the validation page.</p>
+                <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
+
+
+                <h3>Link to the page</h3>
+                <p><a href="content_ST3.html">Include a link to the actual page you describe.</a></p>
+            </section>
+
+            <section>
+                <h2 id="userProfile">User Profile Page</h2>
+                <h3>Technical Description</h3>
+                <p>This User Profile page is based on the CSS Grid layout (.profile-layout) with grid-template-columns:
+                    1fr 1.8fr. This design gives the control panel a slimmer left column and a broader right column to
+                    the profile output. Simultaneously, when the maximum width is reached (680px), a media query will
+                    trigger the rearrangement to a single column (1fr), and the layout will be stacked by default
+                    without horizontal scrolling on a mobile.</p>
+
+                <p>The interface greatly depends on JavaScript to produce a multi-step, interactive progressive
+                    profiling. The native prompt() function is used to gather data in a sequential manner instead of
+                    using the normal form data. These inputs are temporarily stored in a JavaScript data object
+                    (profileData). After each step has been done, DOM manipulation is used to change the spans in the
+                    right panel ( e.g. #out-name ) to the data that was captured, and the associated .profile-section
+                    div is changed to display: none display: block.
+                </p>
+
+                <p>The display of visual feedback is done dynamically through CSS classes and JavaScript. Upon
+                    completion of a step,JS attaches the.done class to the step button altering its background colour.
+                    At the same time, there is a seamless CSS keyframe transition of a fade in ([@keyframes fadein]). It
+                    gives a lift of translateY and a decrease in the amount of opacitance to unveil the newly filled
+                    area. The width of the progress bar is recalculated in JS on the basis of completed steps and is
+                    animated with the help of a CSS transition: width 0.5s.
+                </p>
+
+                <h3>Accessibility</h3>
+                <p>TSemantic HTML5 landmarks such as aside, main, have been used on the page to create easy document
+                    structure by the screen readers. The aside element is marked with aria-label="Profile steps" to tell
+                    the contents of the piece to assistive technologies whereas the output area is marked with
+                    aria-label="Your profile" as the main output.
+                </p>
+
+                <p>TThe profile output container contains aria-live=polite which guarantees that users of a screen
+                    reader are automatically informed that new profile data is injected into the DOM once a step has
+                    been completed but it does not forcefully interrupt their ongoing reading process. Upon completion
+                    of the three steps, a completion message is displayed using role= status to declare the success
+                    status.
+                </p>
+
+                <p>The custom progress bar will be using the standard ARIA progress attributes. This wrapper div has
+                    role as progressbar and aria-valuemin = 0, aria-valuemax = 100 as well as dynamically set
+                    aria-valuenow so that the percentage of completion is well portrayed to the visually impaired users
+                    as they continue with the steps.
+                </p>
+
+                <h3>Link to the validation page</h3>
+                <!-- Update the path to link the Page Editor with the splash page -->
+                <p><a href="validation_ST3.html#profileVal">Link to the validation page</a>. Use the marker to
+                    jump to the corresponding section of the validation page.</p>
+                <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
+
+
+                <h3>Link to the page</h3>
+                <p><a href="profile.html">Include a link to the actual page you describe.</a></p>
+            </section>
+
+            <section>
+                <h2 id="sitemap">Sitemap Page</h2>
+                <h3>Technical Description</h3>
+                <p>The Sitemap page also does not conform to the old pattern of using a static image or nested HTML
+                    lists in favour of a fully interactive, inline Scalable Vector Graphic (SVG). The map itself is
+                    contained in an element with a viewBox attribute of 0 0 860 560 and a width attribute of 100%. This
+                    will make the whole diagram scale down to the screen of mobile devices in a responsive way without
+                    any reduction in the layout or proportions in the layout. The diagram is encased in an element
+                    (.sitemap-wrap) with an overflow-x auto in case it has to scroll horizontally safely on very skinny
+                    devices in case the scaling is too small to read.
+                </p>
+
+                <p>Each item of the sitemap is a functional hyperlink. The nodes are drawn with SVG with <a> tags inside
+                        of the nodes of the form of <rect> to make the background of the cards and with <text> tags to
+                                form the labels. To make the hierarchy levels and content groupings visually distinct
+                                the connector lines are drawn with explicit line coordinates explicitly styled with a
+                                stroke and stroke-dasharray.
+
+                </p>
+
+                <p>The interactivity is controlled through CSS. On hovering or emphasizing a node (.sm-node:hover rect),
+                    CSS transitions are used to automatically change the fill and stroke properties that are used to
+                    emphasize the selection. The use of pointer-events: none on SVG texts is a very important UX detail.
+                    This will avoid the rapid flickering on and off appearance of the hover effect in cases where the
+                    mouse cursor floats across the characters of the text within the rectangle.
+                </p>
+
+
+                <h3>Accessibility</h3>
+                <p>Creating a complicated diagram in SVG poses some challenges to accessibility and by making the SVG
+                    intrinsically accessible these challenges were overcome. The root element is assigned the role of
+                    img and a descriptive aria-label to ensure that a screen reader reveals that it is a single coherent
+                    diagram and not a haphazard set of lines and shapes.</p>
+
+                <p>All interactive nodes (<|human|>All interactive nodes (<|human|>Each interactive node (<|human|>All
+                                interactive nodes ( Since the presence of a SVG anchor tag does not always reliably
+                                state what is contained in its inner parts to all screen readers, a specific aria-label
+                                explains what precisely the link will lead to (e.g. "Content page: Sustainable Fishing).
+                                Also there is a native SVG title element nested within each node which gives a standard
+                                tooltip when a user hovers the mouse over a node.</p>
+
+                <p>In order to make keyboard navigation visible, the custom focus state gives high-contrast dashed
+                    outline (outline: 2px dashed var(--secondary)) with outline-offset, so that the keyboard users can
+                    actually see what node they are currently tabbed into.</p>
+
+                <h3>Link to the validation page</h3>
+                <!-- Update the path to link the Page Editor with the splash page -->
+                <p><a href="validation_ST3.html#sitemapVal">Link to the validation page</a>. Use the marker to
+                    jump to the corresponding section of the validation page.</p>
+                <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
+
+
+                <h3>Link to the page</h3>
+                <p><a href="sitemap.html">Include a link to the actual page you describe.</a></p>
+            </section>
+            <section>
+                <h2 id="challenge"> Challenges and Lessons Learned</h2>
+                <p>The interactive SVG sitemap implementation was one of the major technical challenges that were faced.
+                    In particular, there was a problem in the flickering of the hover transitions during the movement of
+                    the cursor between text labels in the nodes. This was solved by applying the CSS
+                    <code>pointer-events: none</code> property on all of the SVG text elements, so that it was only the
+                    node rectangles that generated the hover state leading to a far much smoother user experience.
+                </p>
+
+                <p>The other issue was to ensure consistency of layout across devices, but without repetitive media
+                    queries. With the Team and Feedback pages designed using CSS grid and its <code>auto-fit</code> and
+                    <code>minmax()</code> features, I designed a fluid layout that wraps itself. But to be sure that the
+                    <code>object-fit: cover</code> property was working properly with images of different aspect ratios
+                    within these grids, it took some experimentation with fixed-height containers to avoid distortion of
+                    the image.
+                </p>
+
+                <p>It also took particular care to implement JavaScript in establishing real time form validation and
+                    feedback on the Feedback page. I was able to write the live character counter which changes color
+                    when the user is approaching the limit. Among the lessons learnt here was that instead of using the
+                    <code>keyup</code> event, we should use the <code>input</code> event because it is the only event
+                    that would capture all types of text entries such as pasting and this makes the validation system
+                    more robust.
+                </p>
+
+                <p>Lastly, this project strengthened the importance of semantic HTML and creating accessibility-friendly
+                    designs. <code>aria-live</code> in the dynamic profile and <code>role=alert</code> in the form
+                    submission made me understand the role of making components interactive to be really useful to the
+                    users of the screen reader. Also, the shift to a standardized <code>images/</code> folder structure
+                    meant that there was a need to have good management of the assets so that paths would not be broken
+                    in a multi-page project.</p>
+            </section>
+
+            <section>
+                <h2 id="compliance"> Compliance</h2>
+                <p>All the pages that are developed in this project are in line with Janet Acceptable Use Policy,
+                    whereby, the content must be educational and non-commercial and should not violate on intellectual
+                    property of any form. I have also ensured that no defamatory or restricted content is hosted by
+                    ensuring that I have used royalty-free image resources (credited in the References section) and do
+                    not violate the law.</p>
+
+                <p>Technically, the pages are in accordance to the W3C standards as identified by the validation reports
+                    mentioned on the Validator page. Moreover, I have complied with the accessibility standards to be
+                    able to navigate the website through assistive technologies with the help of semantic HTML5 elements
+                    and ARIA landmarks to meet the core requirements of the module of publication.
+                </p>
+
+            </section>
+
+            <section>
+                <h2 id="compliance"> Group Meetings and Individual Contribution Log</h2>
+                <p>Include a Group Meetings and Contribution Log that documents your engagement with group work.</p>
+                Requirements:
+                <ul>
+                    <li>A minimum of six (6) group meetings must be recorded.</li>
+                    <li>Each student must provide their own account of the meetings.</li>
+                    <li>The log must focus on individual contribution, not just group activity.</li>
+                </ul>
+                <p>Feel free to follow the example table structure below:</p>
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th colspan="6">Group Meetings and Contribution Log</th>
+                        </tr>
+                        <tr>
+                            <th>Meeting</th>
+                            <th>Date &amp; Time</th>
+                            <th>Format</th>
+                            <th>Objective</th>
+                            <th>Attended</th>
+                            <th>Your Individual Contribution</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>3 Feb 2026</td>
+                            <td>Face-to-face</td>
+                            <td>Agree SDG and assign roles</td>
+                            <td>Yes</td>
+                            <td>I agreed to take responsibility for the Home Page and template.</td>
+                        </tr>
+
+                        <tr>
+                            <td>2</td>
+                            <td>17 Feb 2026</td>
+                            <td>Online</td>
+                            <td>Review Home Page design</td>
+                            <td>Yes</td>
+                            <td>I suggested the colour palette and card-based layout.</td>
+                        </tr>
+
+                        <tr>
+                            <td>3</td>
+                            <td>03 Mar 2026</td>
+                            <td>Hybrid</td>
+                            <td>Progress review</td>
+                            <td>No</td>
+                            <td>I reviewed meeting notes and followed up with tasks.</td>
+                        </tr>
+
+                        <tr>
+                            <td>4</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+
+                        <tr>
+                            <td>5</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+
+                        <tr>
+                            <td>6</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </section>
+
+            <section>
+                <h2 id="ref">References</h2>
+                <p>Provide links to resources you used following a consistent format (e.g., APA, MLA, or a simplified
+                    style). For example:<br><br>
+                <ul class="ref">
+                    <li>Unsplash (2026) <i>Man playing with dog on beach</i>. Available at: <a href="https://unsplash.com/photos/man-in-blue-t-shirt-and-black-shorts-playing-with-black-short-coated-dog-on-beach-nmZhTkZik8g">https://unsplash.com/photos/man-in-blue-...</a> (Last accessed: 29 Mar 2026).</li>
+                    <li>Unsplash (2026) <i>Underwater view of a coral reef</i>. Available at: <a href="https://unsplash.com/photos/an-underwater-view-of-a-coral-reef-with-lots-of-corals-IYfxbrVjxoA">https://unsplash.com/photos/an-underwate...</a> (Last accessed: 29 Mar 2026).</li>
+                    <li>Unsplash (2026) <i>People watch kelp forest in large aquarium window</i>. Available at: <a href="https://unsplash.com/photos/people-watch-kelp-forest-in-large-aquarium-window-1ZgKuoK8Bv0">https://unsplash.com/photos/people-watch...</a> (Last accessed: 29 Mar 2026).</li>
+                    <li>Unsplash (2026) <i>Man walking near boat ships during daytime</i>. Available at: <a href="https://unsplash.com/photos/man-walking-near-boat-ships-during-daytime-1hIhQkzKqaU">https://unsplash.com/photos/man-walking-...</a> (Last accessed: 29 Mar 2026).</li>
+                    <li>Duckett, J., 2011. HTML and CSS: Design and Build Websites,<i>John Willey&Sons. Inc. Indianappolis.</i></li>
+                </ul>
+            </section>
+
+            <p class="top"><a href="#top">Go top</a></p>
+        </main>
+
+        <!-- Sidebar area -->
+        <aside>
+            <h3>Core pages developed:</h3>
+
+            <!-- Customize this to the role you undertook. Keep only the list items you were responsible to develop, delete the rest -->
+            <ul class="top-level-ul">
+                <!-- Keep only the list items you were responsible to develop, delete the rest and update the links to the corresponding markers -->
+                <li>Student 3
+                    <ul>
+                        <li><a href="#feedback">Feedback</a></li>
+                        <li><a href="#team">Team</a></li>
+                        <li><a href="#content">Content</a></li>
+                        <li><a href="#userProfile">User Profile</a></li>
+                        <li><a href="#sitemap">Sitemap</a></li>
+                    </ul>
+                </li>
+                <li><a href="#challenge">Challenges and Lessons Learned</a></li>
+                <li><a href="#compliance">Compliance</a></li>
+                <li><a href="#group">Group Meetings and Individual Contribution Log</a></li>
+                <li><a href="#ref">References</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 OceanAct Team. <a href="validation_ST3.html">View Validation Page</a></p>
+    </footer>
+</body>
+
+</html>
