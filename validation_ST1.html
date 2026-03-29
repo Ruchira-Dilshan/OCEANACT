@@ -6,84 +6,290 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Validator Page Student 1 - Saarujan</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="css/pageEditor_validator.css"> <!-- External CSS link -->
 
+    <style>
+        .content-layout {
+            display: grid;
+            grid-template-columns: 1fr 260px;
+            gap: 2rem;
+            align-items: start;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        header {
+            background-color: var(--dark, #03045e);
+        }
+
+        footer {
+            background-color: var(--dark, #03045e);
+        }
+
+        @media (max-width: 768px) {
+            .content-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .side-nav {
+                display: none;
+            }
+        }
+
+        .side-nav {
+            position: sticky;
+            top: 80px;
+            background: var(--card-bg, #ffffff);
+            border: 1px solid var(--border, #e0e0e0);
+            border-radius: 10px;
+            padding: 1.2rem;
+        }
+
+        .side-nav h3 {
+            color: var(--primary, #0077b6);
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            border-bottom: 1px solid var(--border, #e0e0e0);
+            padding-bottom: 0.5rem;
+        }
+
+        .side-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .side-nav ul li a {
+            font-size: 0.9rem;
+            color: var(--muted, #666);
+            display: block;
+            padding: 0.25rem 0 0.25rem 0.5rem;
+            border-left: 3px solid transparent;
+            transition: color 0.2s, border-color 0.2s;
+            text-decoration: none;
+        }
+
+        .side-nav ul li a:hover {
+            color: var(--primary, #0077b6);
+            border-color: var(--primary, #0077b6);
+        }
+
+        .side-nav ul ul {
+            margin-left: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-article section {
+            margin-bottom: 2.5rem;
+        }
+
+        .content-article h1,
+        .content-article h2 {
+            color: var(--primary, #0077b6);
+            border-bottom: 2px solid var(--border, #e0e0e0);
+            padding-bottom: 0.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-article h3 {
+            font-size: 1.1rem;
+            color: #00b4d8;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .content-article p {
+            margin-bottom: 1rem;
+        }
+
+        .go-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--primary, #0077b6);
+            color: #ffffff;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 44px;
+            font-size: 1.2rem;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0, 119, 182, 0.3);
+            z-index: 500;
+            transition: background 0.2s;
+        }
+
+        .go-top:hover {
+            background: var(--dark, #03045e);
+            color: #ffffff;
+        }
+
+        #page-top {
+            display: block;
+            position: relative;
+            top: -80px;
+        }
+
+        header {
+            font-family: var(--font-header, 'Space Grotesk', sans-serif);
+        }
+
+        h1 {
+            font-family: var(--font-header, 'Space Grotesk', sans-serif);
+            font-size: 2.5rem;
+            color: var(--primary, #0077b6);
+            margin-bottom: 0.4rem;
+        }
+
+        p,
+        ul,
+        li,
+        td,
+        th {
+            font-family: var(--font-body, 'Montserrat', sans-serif);
+            line-height: 1.6;
+        }
+
+        td {
+            padding: 8px;
+            border: 1px solid var(--border, #e0e0e0);
+        }
+
+        th {
+            padding: 8px;
+            border: 1px solid var(--border, #e0e0e0);
+            background-color: var(--bg-light, #f8f9fa);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stud h1 {
+            text-align: center;
+            font-size: 2.2rem;
+        }
+
+        .stud p {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--muted, #666666);
+        }
+    </style>
 </head>
 
 <body>
+    <span id="page-top"></span>
 
     <!-- Update the header and the footer to be consistent with the rest of the pages you implemented -->
 
-    <header id="top">
-        <h1>Protect Life Below Water</h1>
+    <header>
+        <div class="header-inner">
+            <a href="home.html" class="logo" aria-label="OceanAct Home"><span class="logo-icon"
+                    aria-hidden="true">🌊</span><span class="logo-text">OceanAct</span></a>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="ais.html">Impact Simulator</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <section class="stud">
-        <h2>Saarujan Shanthakumar | Team: OceanAct | Student 1</h2>
-    </section>
+    <main>
+        <section class="stud" style="margin: 2rem 0 3rem 0;">
+            <h1>Saarujan Shanthakumar</h1>
+            <p>Team: OceanAct | Student 1</p>
+        </section>
 
-    <div class="container">
-        <!-- Main content area -->
-        <main>
+        <div class="content-layout">
+            <!-- Main content area -->
+            <article class="content-article">
 
-            <!-- Update the content of the following sections with the information that corresponds to the pages you implemented  -->
+                <!-- Update the content of the following sections with the information that corresponds to the pages you implemented  -->
 
-            <section>
-                <h2 id="splashVal">Home Page validation report</h2>
-                <p>The Home Page successfully passed HTML validation. All structural and semantic elements were verified
-                    with no errors found. Ensuring ARIA attributes were correctly formatted alongside standardized
-                    semantic tags provided robust validity.</p>
-                <img src="images/homeval.png" alt="Home Page HTML Validation Report">
+                <section>
+                    <h2 id="splashVal">Home Page validation report</h2>
+                    <p>The Home Page successfully passed HTML validation. All structural and semantic elements were
+                        verified
+                        with no errors found. Ensuring ARIA attributes were correctly formatted alongside standardized
+                        semantic tags provided robust validity.</p>
+                    <img src="images/homeval.png" alt="Home Page HTML Validation Report">
 
-                <h3>Back to Page Editor page</h3>
-                <p><a href="pageEditor_ST1.html#home">Return to Home Page technical description in the Page Editor.</a>
-                </p>
-            </section>
+                    <h3>Back to Page Editor page</h3>
+                    <p><a href="pageEditor_ST1.html#home">Return to Home Page technical description in the Page
+                            Editor.</a>
+                    </p>
+                </section>
 
-            <section>
-                <h2 id="volunteerVal">Gallery Page validation report</h2>
-                <p>The Gallery Page validation highlighted minor structural details during initial runs, which were
-                    swiftly corrected. The final report confirms zero errors. The dynamic integration of DOM elements
-                    was tested to guarantee valid HTML conformity.</p>
-                <img src="images/gallery.val.png" alt="Gallery Page HTML Validation Report">
+                <section>
+                    <h2 id="volunteerVal">Gallery Page validation report</h2>
+                    <p>The Gallery Page validation highlighted minor structural details during initial runs, which were
+                        swiftly corrected. The final report confirms zero errors. The dynamic integration of DOM
+                        elements
+                        was tested to guarantee valid HTML conformity.</p>
+                    <img src="images/gallery.val.png" alt="Gallery Page HTML Validation Report">
 
-                <h3>Back to Page Editor page</h3>
-                <p><a href="pageEditor_ST1.html#gallery">Return to Gallery Page technical description in the Page
-                        Editor.</a></p>
-            </section>
+                    <h3>Back to Page Editor page</h3>
+                    <p><a href="pageEditor_ST1.html#gallery">Return to Gallery Page technical description in the Page
+                            Editor.</a></p>
+                </section>
 
-            <section>
-                <h2 id="contentVal">Content Page validation report</h2>
-                <p>Validation for the Content Page yielded a perfect outcome without any errors. The document's strict
-                    header hierarchy and semantic structure were properly validated conforming effectively to W3C
-                    standards.</p>
-                <img src="images/contentst1val.png" alt="Content Page HTML Validation Report">
+                <section>
+                    <h2 id="contentVal">Content Page validation report</h2>
+                    <p>Validation for the Content Page yielded a perfect outcome without any errors. The document's
+                        strict
+                        header hierarchy and semantic structure were properly validated conforming effectively to W3C
+                        standards.</p>
+                    <img src="images/contentst1val.png" alt="Content Page HTML Validation Report">
 
-                <h3>Back to Page Editor page</h3>
-                <p><a href="pageEditor_ST1.html#content">Return to Content Page technical description in the Page
-                        Editor.</a></p>
-            </section>
+                    <h3>Back to Page Editor page</h3>
+                    <p><a href="pageEditor_ST1.html#content">Return to Content Page technical description in the Page
+                            Editor.</a></p>
+                </section>
 
 
-            <p class="top"><a href="#top">Go top</a></p>
-        </main>
+            </article>
 
-        <!-- Sidebar area -->
-        <aside>
-            <h3>Core pages developed:</h3>
-            <ul class="top-level-ul">
-                <li>Student 1</li>
-                <ul>
-                    <li><a href="#splashVal">Home page validation</a></li>
-                    <li><a href="#volunteerVal">Gallery validation</a></li>
-                    <li><a href="#contentVal">Content validation</a></li>
+            <!-- Sidebar area -->
+            <aside class="side-nav" aria-label="Page sections">
+                <h3>Core pages developed:</h3>
+                <ul class="top-level-ul">
+                    <li>Student 1</li>
+                    <ul>
+                        <li><a href="#splashVal">Home page validation</a></li>
+                        <li><a href="#volunteerVal">Gallery validation</a></li>
+                        <li><a href="#contentVal">Content validation</a></li>
+                    </ul>
                 </ul>
-            </ul>
-        </aside>
-    </div>
+            </aside>
+        </div>
+    </main>
 
+    <a href="#page-top" class="go-top" aria-label="Go to top of page">↑</a>
     <footer>
-        <p>Protect Life Below Water | University of Westminster</p>
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="pageEditor_ST2.html">Page Editor: Ruchira</a>
+                <a href="validation_ST2.html">Validation</a>
+            </div>
+            <p class="footer-copy">Ruchira · OceanAct · SDG 14 · University of Westminster · 2025/26</p>
+        </div>
     </footer>
 </body>
 
